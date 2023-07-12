@@ -354,18 +354,6 @@
                                                                                 <th>Option</th>
                                                                             </tr>
                                                                         </thead>
-                                                                        <tfoot>
-                                                                            <tr>
-                                                                                <th>Numérotation</th>
-                                                                                <!-- <th style="display:none;">id_Cat</th> -->
-                                                                                <th>Catégorie</th>
-                                                                                <th>Designation</th>
-                                                                                <th>Specification</th>
-                                                                                <th>Quantité</th>
-                                                                                <th>Unité</th>
-                                                                                <th>Option</th>
-                                                                            </tr>
-                                                                        </tfoot>
                                                                         <tbody class="bodyAddingDEm">
                                                                         </tbody>
                                                                     </table>
@@ -512,18 +500,6 @@
                                                                             <th>Etat</th>
                                                                         </tr>
                                                                     </thead>
-                                                                    <tfoot>
-                                                                        <tr>
-                                                                            <th>Matricule</th>
-                                                                            <th>Nom</th>
-                                                                            <th>Division</th>
-                                                                            <th>Article</th>
-                                                                            <th>Quantité</th>
-                                                                            <th>Unité</th>
-                                                                            <th>Date</th>
-                                                                            <th>Etat</th>
-                                                                        </tr>
-                                                                    </tfoot>
                                                                     <tbody>
                                                                         <?php
                                                                         foreach  ($bigDemande['W'] as $request){
@@ -630,18 +606,6 @@
                                                                             <th>Etat</th>
                                                                         </tr>
                                                                     </thead>
-                                                                    <tfoot>
-                                                                        <tr>
-                                                                            <th>Matricule</th>
-                                                                            <th>Nom</th>
-                                                                            <th>Division</th>
-                                                                            <th>Article</th>
-                                                                            <th>Quantité</th>
-                                                                            <th>Unité</th>
-                                                                            <th>Date de validation</th>
-                                                                            <th>Etat</th>
-                                                                        </tr>
-                                                                    </tfoot>
                                                                     <tbody>
                                                                         <?php   
                                                                     foreach  ($bigDemande['R'] as $request){
@@ -740,18 +704,6 @@
                                                                             <th>Etat</th>
                                                                         </tr>
                                                                     </thead>
-                                                                    <tfoot>
-                                                                        <tr>
-                                                                            <th>Matricule</th>
-                                                                            <th>Nom</th>
-                                                                            <th>Division</th>
-                                                                            <th>Article</th>
-                                                                            <th>Quantité</th>
-                                                                            <th>Unité</th>
-                                                                            <th>Date de validation</th>
-                                                                            <th>Etat</th>
-                                                                        </tr>
-                                                                    </tfoot>
                                                                     <tbody>
                                                                         <?php   
                                                                     foreach  ($bigDemande['Li'] as $request){
@@ -823,18 +775,6 @@
                                                                             <th>Etat</th>
                                                                         </tr>
                                                                     </thead>
-                                                                    <tfoot>
-                                                                        <tr>
-                                                                            <th>Matricule</th>
-                                                                            <th>Nom</th>
-                                                                            <th>Division</th>
-                                                                            <th>Article</th>
-                                                                            <th>Quantité</th>
-                                                                            <th>Unité</th>
-                                                                            <th>Date</th>
-                                                                            <th>Etat</th>
-                                                                        </tr>
-                                                                    </tfoot>
                                                                     <tbody>
                                                                         <?php   
                                                                     foreach  ($bigDemande['L'] as $request){
