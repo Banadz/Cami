@@ -60,6 +60,37 @@ class HomeController extends CI_Controller
         $this->load->view('page/fichedetenteur');
     }
 
+    public function detention(){
+        $datenow = date('d/m/Y');
+        $services = $_SESSION['agent_ser']['0']['CODE_SER'];
+        $requete = $this->db->query("SELECT AGENT.NOM_AG,AGENT.PRENOM_AG,AGENT.FONCTION_AG,AGENT.ADRESSE_AG,AGENT.CODE_DIVISION FROM AGENT,DIVISION,SERVICE WHERE AGENT.TYPE_AG = 'Admin' AND AGENT.CODE_DIVISION = DIVISION.CODE_DIVISION AND DIVISION.CODE_SER = SERVICE.CODE_SER AND DIVISION.CODE_SER = '$services'");
+        $depositaire = $requete->row_array();
+        
+        $matricule = $_SESSION['agent']['MATRICULE'];
+        if (isset($matricule)) {
+            $agreq = $this->db->query("SELECT DIVISION.CODE_DIVISION, DIVISION.LABEL_DIVISION, AGENT.CODE_DIVISION, AGENT.PORTE_AG FROM DIVISION,AGENT WHERE AGENT.MATRICULE = '$matricule' AND DIVISION.CODE_DIVISION = AGENT.CODE_DIVISION");
+            $info = $agreq->row_array();
+        
+            $matreq = $this->db->query("SELECT * FROM MATERIEL WHERE MATRICULE = '$matricule' AND SORTIE IS NULL");
+            $resultat['resultat'] = $matreq->result();
+        
+            $nombre = $this->db->query("SELECT SUM(NOMBRE) AS SOMME FROM MATERIEL, DIVISION, SERVICE WHERE MATRICULE = '$matricule' 
+                        AND DIVISION.CODE_SER = SERVICE.CODE_SER AND MATERIEL.CODE_DIVISION = DIVISION.CODE_DIVISION AND SERVICE.CODE_SER = '$services' 
+                        AND MATERIEL.SORTIE IS NULL");
+            $tot = $nombre->row_array();
+            $affich['total'] = 0;
+            if ($tot['SOMME'] < 10) {
+                $affich['total'] = '0'.$tot['SOMME'];
+            } else {
+                $affich['total'] = $tot['SOMME'];
+            }
+            
+        }
+        $this->load->view('template/head',$affich);
+        $this->load->view('page/page_fiche',$resultat);
+        $this->load->view('template/foot');
+    }
+
     public function sesagents()
     {
         $service = $_SESSION['agent_ser']['0']['CODE_SER'];

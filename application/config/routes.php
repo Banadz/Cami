@@ -125,6 +125,7 @@ $route['compte'] = 'HomeController/compte';
 // Page fichedetenteur
 $route['fichedetenteur'] = 'HomeController/fichedetenteur';
 $route['sesagents'] = 'HomeController/sesagents';
+$route['user/materiel'] = 'HomeController/detention';
 // Page concernant du patrimoine
 $route['detailassets/(:any)'] = 'AnyController/detailassets/$1';
 $route['afficheassets']['GET'] = 'GetController/afficheassets';

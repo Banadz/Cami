@@ -104,61 +104,88 @@ function convert_number_to_words($number) {
     $lettretot = convert_number_to_words($tot['SOMME']);
 
 ?>
-    <html>
-    <!--<![endif]-->
+<html>
+<!--<![endif]-->
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Home_page</title>
-        <meta name="description" content="Sufee Admin - HTML5 Admin Template">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home_page</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="apple-touch-icon" href="apple-icon.png">
-        <link rel="shortcut icon" href="">
+    <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="shortcut icon" href="">
 
-        <link rel="stylesheet" href="<?php echo base_url('bootstrap/vendors/bootstrap/dist/css/bootstrap.min.css');?>">
-        
-        
-        <script src="<?php echo base_url('bootstrap/assets/js/loader.js');?>" defer></script>
+    <link rel="stylesheet" href="<?php echo base_url('bootstrap/vendors/bootstrap/dist/css/bootstrap.min.css');?>">
 
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="<?php echo base_url('bootstrap/assets/js/loader.js');?>" defer></script>
 
-    </head>
-    <?php  
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+</head>
+<?php  
         ob_start() ;
         
     ?>
-<page  backtop="20mm" backleft="10mm" backright="10mm" backbottom="30mm">
+<page backtop="20mm" backleft="10mm" backright="10mm" backbottom="30mm">
+
     <body style="font-family:times; font-size:12pt; width: 100%">
         <style type="text/css">
-            label{font-family:times; font-size:12pt;}
-            table {border-collapse:collapse;width: 100%; color:#262735; font-size:12pt; margin-left:50px;margin-top:10px;border-spacing:0;border: 0.5px;};
-            thead{font-family:times;};
-            
-            table {
-                border-collapse: collapse;
-                border: 0.5px;
-            }
-            th, td {
-                border: 0.5px;
-                padding: 8px;
-                text-align: left;
-            }
-            th{
-                border-top: 0.5px;
-                padding: 8px;
-            }
-            div .ambony, .ambany{
-                width: 83%;
-                margin-left: 50px;
-            }
-            div .ambonygauche{
-                margin-top: -18px;
-                margin-left: 410px;
-            }
+        label {
+            font-family: times;
+            font-size: 12pt;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            color: #262735;
+            font-size: 12pt;
+            margin-left: 50px;
+            margin-top: 10px;
+            border-spacing: 0;
+            border: 0.5px;
+        }
+
+        ;
+
+        thead {
+            font-family: times;
+        }
+
+        ;
+
+        table {
+            border-collapse: collapse;
+            border: 0.5px;
+        }
+
+        th,
+        td {
+            border: 0.5px;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            border-top: 0.5px;
+            padding: 8px;
+        }
+
+        div .ambony,
+        .ambany {
+            width: 83%;
+            margin-left: 50px;
+        }
+
+        div .ambonygauche {
+            margin-top: -18px;
+            margin-left: 410px;
+        }
         </style>
         <div style="text-align: justify;">
             <div class="ambony">
@@ -169,14 +196,18 @@ function convert_number_to_words($number) {
                 </div>
                 <br>
                 <div>
-                    <span>REMIS A UN DETENTEUR EFFECTIF(d'inscription au carnet tenu dans les conditions indiquées à l'article 24 de l'instruction)</span>
+                    <span>REMIS A UN DETENTEUR EFFECTIF(d'inscription au carnet tenu dans les conditions indiquées à
+                        l'article 24 de l'instruction)</span>
                     <p>
-                        <span class="depot"><?php echo $info['CODE_DIVISION'];?></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span
+                            class="depot"><?php echo $info['CODE_DIVISION'];?></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <span class="porte">Porte: <?php echo $info['PORTE_AG'];?></span>
                     </p>
                     <p>
-                        <span>Nom, grade et fonctions du Dépositaire comptable :</span><span><?php echo $depositaire['NOM_AG'];?> <?php echo $depositaire['PRENOM_AG'];?>, <?php echo $depositaire['FONCTION_AG'];?></span>
-                        <p><span>Adresse exacte : </span><span><?php echo $depositaire['ADRESSE_AG'];?></span></p>
+                        <span>Nom, grade et fonctions du Dépositaire comptable
+                            :</span><span><?php echo $depositaire['NOM_AG'];?> <?php echo $depositaire['PRENOM_AG'];?>,
+                            <?php echo $depositaire['FONCTION_AG'];?></span>
+                    <p><span>Adresse exacte : </span><span><?php echo $depositaire['ADRESSE_AG'];?></span></p>
                     </p>
                     <p>
                         <span>IM Detenteur : </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -198,17 +229,19 @@ function convert_number_to_words($number) {
                     </thead>
                     <tbody>
                         <?php foreach ($resultat as $row) {?>
-                            <tr id="a">
-                                <td style="text-align: center" class ="nomenclature"><?php echo $row->ID_NOM;?></td>
-                                <td class ="designation"><?php echo $row->SPEC_MAT;?></td>
-                                <td style="text-align: center" class="unite">nb</td>
-                                <td style="text-align: right" class ="nombre"><?php echo $row->NOMBRE;?></td>
-                                <td style="text-align: center" class="qualite"><?php echo $row->ETAT_MAT;?></td>
-                            </tr>
+                        <tr id="a">
+                            <td style="text-align: center" class="nomenclature"><?php echo $row->ID_NOM;?></td>
+                            <td class="designation"><?php echo $row->SPEC_MAT;?></td>
+                            <td style="text-align: center" class="unite">nb</td>
+                            <td style="text-align: right" class="nombre"><?php echo $row->NOMBRE;?></td>
+                            <td style="text-align: center" class="qualite"><?php echo $row->ETAT_MAT;?></td>
+                        </tr>
                         <?php } ?>
                         <tr class="b">
-                            <td style="text-align: right; border-bottom: 0.5px solid black; border-collapse: separate;" colspan="4" class ="nombre2"><?php echo $tot['SOMME'];?></td>
-                            <td style="text-align: center; border-bottom: 0.5px solid black; border-collapse: separate;" class="total">Total</td>
+                            <td style="text-align: right; border-bottom: 0.5px solid black; border-collapse: separate;"
+                                colspan="4" class="nombre2"><?php echo $tot['SOMME'];?></td>
+                            <td style="text-align: center; border-bottom: 0.5px solid black; border-collapse: separate;"
+                                class="total">Total</td>
                         </tr>
                     </tbody>
                 </table>
@@ -216,12 +249,17 @@ function convert_number_to_words($number) {
             <br>
             <div class="ambany">
                 <div>
-                    <span style="text-align: justify;">ARRETE le presente inventaire à <?php echo $lettretot.' ('; echo $affich.')'?><?php if ($tot['SOMME'] <= 1) {  echo ' Article';} else if ($tot['SOMME'] >= 1){ echo ' Articles';};?> </span>
+                    <span style="text-align: justify;">ARRETE le presente inventaire à
+                        <?php echo $lettretot.' ('; echo $affich.')'?><?php if ($tot['SOMME'] <= 1) {  echo ' Article';} else if ($tot['SOMME'] >= 1){ echo ' Articles';};?>
+                    </span>
                     <p>
-                        <span>En cas de perte ou non réintégration, ces articles sont remboursées par le détenteur à leur valeur de remplacement, les réparations de déteriorations sont également à la charge du détenteur</span>
+                        <span>En cas de perte ou non réintégration, ces articles sont remboursées par le détenteur à
+                            leur valeur de remplacement, les réparations de déteriorations sont également à la charge du
+                            détenteur</span>
                     </p>
                     <p>
-                        <span class="ambdate">Reconnu exacte en quantités et en qualité : </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="ambdate">Reconnu exacte en quantités et en qualité :
+                        </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <span class="date">A Fianarantsoa, le <?php echo $datenow;?></span>
                     </p>
                 </div>
@@ -244,6 +282,7 @@ function convert_number_to_words($number) {
         die($e);
     }
 ?>
+
 </html>
 
 
