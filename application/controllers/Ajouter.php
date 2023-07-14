@@ -2,6 +2,9 @@
 
     class Ajouter extends CI_Controller
     {
+        public function isAjax(){
+            return !empty ($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH'])=='xmlhttprequest';
+        }
         public function __construct()
         {
             parent::__construct(); 
@@ -55,31 +58,69 @@
         }
         public function ajoutcmpt_nom()
         {
-            if (isset($_POST['save_nomencl'])) {
+            if (isset($_POST)) {
                 $id_nom = $_POST['id_nom'];
                 $detail_nom = $_POST['detail_nom'];
 
                 $nomencl = new ModelInsertion;
                 $nomencl->insertNomencl("INSERT INTO NOMENCLATURE VALUES('$id_nom',q'[$detail_nom]')");
                 $this->session->set_flashdata("nomenclature", "Nomenclature bien enregistré");
-                redirect(base_url()."nomenclature");
-            } elseif (isset($_POST['save_cmpt'])) {
+                if ($this->isAjax()){
+                    $reponse = array(
+                        'success'=>$_SESSION['compte'],
+                        'num'=>$num_cmpt
+                    );
+                    
+                    echo json_encode($reponse);
+                }else{
+                    redirect(base_url()."nomenclature");
+                }
+            }
+        }
+        public function ajoutCompte(){
+            if ($_POST){
                 $num_cmpt = $_POST['num_cmpt'];
                 $des_cmpt = $_POST['designation_cmpt'];
-
                 $compte = new ModelInsertion;
                 $compte->insertCmpt("INSERT INTO COMPTE VALUES('$num_cmpt',q'[$des_cmpt]')");
-                $this->session->set_flashdata("compte", "Compte bien enregistré");
-                redirect(base_url()."compte");
+                $this->session->set_flashdata("compte", "Compte $num_cmpt bien enregistré");
+                if ($this->isAjax()){
+                    $reponse = array(
+                        'success'=>$_SESSION['compte'],
+                        'num'=>$num_cmpt
+                    );
+                    
+                    echo json_encode($reponse);
+                }
+                else{
+                    redirect(base_url()."compte");
+                }
+            }else{
+                $this->session->set_flashdata("compte", "Erreur de la réception de données");
+                if ($this->isAjax()){
+                    $reponse = array(
+                        'error'=>$_SESSION['compte'],
+                    );
+                    
+                    echo json_encode($reponse);
+                }
+                else{
+                    redirect(base_url()."compte");
+                }
             }
         }
         public function ajoutcat()
         {
+            
+            $this->load->model('ArticleModel');
+            
+            $id_cmpt = $this->ArticleModel->manual_increment('CATEGORIE', 'ID_CAT');
             $num_cmpt = strip_tags($_POST['id_cmpts']);
             $label_cat = strip_tags($_POST['label_cat']);
 
+
             $categorie = new ModelInsertion;
-            $categorie->insertCat("INSERT INTO CATEGORIE VALUES(ID_CAT.nextval,q'[$label_cat]','$num_cmpt')");
+            $categorie->insertCat("INSERT INTO CATEGORIE VALUES($id_cmpt,q'[$label_cat]','$num_cmpt')");
 
             $query = $this->db->query("SELECT CATEGORIE.ID_CAT,CATEGORIE.LABEL_CAT,COMPTE.DESIGNATION_CMPT 
                                         FROM CATEGORIE,COMPTE WHERE CATEGORIE.LABEL_CAT = '$label_cat' AND COMPTE.NUM_CMPT = CATEGORIE.NUM_CMPT 

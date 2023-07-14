@@ -49,7 +49,7 @@
                                         <li class="nav-item">
                                             <a class="nav-link" id="pills-livred-tab" data-toggle="pill"
                                                 href="#pills-livred" role="tab" aria-controls="pills-livred"
-                                                aria-selected="false">Livraison</a>
+                                                aria-selected="false">Livré</a>
                                         </li>
                                     </ul>
                                     <div class="tab-content mt-2 mb-3" id="pills-tabContent">
@@ -617,7 +617,7 @@
                                                                             <td><?=($request['LABEL_DIVISION']);?></td>
                                                                             <td><?=($request['DESIGNATION_ART']);?>
                                                                                 <?=($request['SPECIFICITE_ART']);?></td>
-                                                                            <td><?=($request['QUANTITE']);?></td>
+                                                                            <td><?=($request['QUANTITE_ACC']);?></td>
                                                                             <td><?=($request['UNITE']);?></td>
                                                                             <td><?=($request['DATE_CONFIRM']);?></td>
 
@@ -786,7 +786,7 @@
                                                                             <td><?=($request['CODE_DIVISION']);?></td>
                                                                             <td><?=($request['DESIGNATION_ART']);?>
                                                                                 <?=($request['SPECIFICITE_ART']);?></td>
-                                                                            <td><?=($request['QUANTITE']);?></td>
+                                                                            <td><?=($request['QUANTITE_ACC']);?></td>
                                                                             <td><?=($request['UNITE']);?></td>
                                                                             <td><?=($request['DATE_DEMANDE']);?></td>
 
@@ -855,33 +855,35 @@
             </div>
             <footer class="footer">
                 <div class="container-fluid">
-                    <span class="pull-left">
-                        <ul class="breadcrumbs">
+                    <nav class="pull-left">
+                        <ul class="nav">
                             <li class="nav-item">
-                                <a href="<?php echo base_url();?>Home" class="gps">
-                                    GPS
-                                </a>
+
+                                CAMI
+
                             </li>
+
                             <li class="separator">
-                                <i class="flaticon-play-button"></i>
+                                <i class="flaticon-right-arrow"></i>
                             </li>
                             <li class="nav-item">
-                                <a href="<?php echo base_url()?>Demande">
-                                    <?=($_SESSION['agent_ser'][0]['CODE_SER']);?>
-                                </a>
+
+                                <?=($_SESSION['agent_ser'][0]['CODE_SER']);?>
+
                             </li>
+
                             <li class="separator">
-                                <i class="flaticon-play-button"></i>
+                                <i class="flaticon-right-arrow"></i>
                             </li>
                             <li class="nav-item">
-                                <a href="<?php echo base_url()?>Demande">
-                                    <?=($_SESSION['agent_div'][0]['CODE_DIVISION']);?>
-                                </a>
+
+                                <?=($_SESSION['agent_div'][0]['CODE_DIVISION']);?>
+
                             </li>
                         </ul>
-                    </span>
+                    </nav>
                     <div class="copyright ml-auto">
-                        2022, made with <i class="fa fa-heart heart text-danger"></i> by <a href="#">@Web_Midev</a>
+                        2022, made with <i class="fa fa-heart heart text-danger"></i> by <a href="#">Andrianajoro</a>
                     </div>
                 </div>
             </footer>

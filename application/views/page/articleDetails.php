@@ -140,25 +140,32 @@
                     <nav class="pull-left">
                         <ul class="nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="https://www.themekita.com">
-                                    ThemeKita
-                                </a>
+
+                                GPS
+
+                            </li>
+
+                            <li class="separator">
+                                <i class="flaticon-right-arrow"></i>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    Help
-                                </a>
+
+                                <?=($_SESSION['agent_ser'][0]['CODE_SER']);?>
+
+                            </li>
+
+                            <li class="separator">
+                                <i class="flaticon-right-arrow"></i>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    Licenses
-                                </a>
+
+                                <?=($_SESSION['agent_div'][0]['CODE_DIVISION']);?>
+
                             </li>
                         </ul>
                     </nav>
                     <div class="copyright ml-auto">
-                        2018, made with <i class="fa fa-heart heart text-danger"></i> by <a
-                            href="https://www.themekita.com">ThemeKita</a>
+                        2022, made with <i class="fa fa-heart heart text-danger"></i> by <a href="#">Andrianajoro</a>
                     </div>
                 </div>
             </footer>

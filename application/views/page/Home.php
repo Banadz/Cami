@@ -64,24 +64,32 @@
             <nav class="pull-left">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            GPS
-                        </a>
+
+                        CAMI
+
+                    </li>
+
+                    <li class="separator">
+                        <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <?=($_SESSION['agent_ser'][0]['CODE_SER']);?>
-                        </a>
+
+                        <?=($_SESSION['agent_ser'][0]['CODE_SER']);?>
+
+                    </li>
+
+                    <li class="separator">
+                        <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <?=($_SESSION['agent_div'][0]['CODE_DIVISION']);?>
-                        </a>
+
+                        <?=($_SESSION['agent_div'][0]['CODE_DIVISION']);?>
+
                     </li>
                 </ul>
             </nav>
             <div class="copyright ml-auto">
-                2018, made with <i class="fa fa-heart heart text-danger"></i> by <a href="#">ThemeKita</a>
+                2022, made with <i class="fa fa-heart heart text-danger"></i> by <a href="#">Andrianajoro</a>
             </div>
         </div>
     </footer>

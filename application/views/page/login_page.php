@@ -36,7 +36,7 @@
 
                             <form class="pt-3" action="<?php echo base_url('LoginController/login');?>" method="POST">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail">Nom Utilisateur</label>
+                                    <label for="exampleInputEmail">Nom d'utilisateur</label>
                                     <div class="input-group">
                                         <?php if (isset($_POST['nomutil'])) { ?>
                                         <div class="input-group-prepend bg-transparent">

@@ -73,4 +73,38 @@
             </div>
         </div>
     </div>
+    <footer class="footer">
+        <div class="container-fluid">
+            <nav class="pull-left">
+                <ul class="nav">
+                    <li class="nav-item">
+
+                        CAMI
+
+                    </li>
+
+                    <li class="separator">
+                        <i class="flaticon-right-arrow"></i>
+                    </li>
+                    <li class="nav-item">
+
+                        <?=($_SESSION['agent_ser'][0]['CODE_SER']);?>
+
+                    </li>
+
+                    <li class="separator">
+                        <i class="flaticon-right-arrow"></i>
+                    </li>
+                    <li class="nav-item">
+
+                        <?=($_SESSION['agent_div'][0]['CODE_DIVISION']);?>
+
+                    </li>
+                </ul>
+            </nav>
+            <div class="copyright ml-auto">
+                2022, made with <i class="fa fa-heart heart text-danger"></i> by <a href="#">Andrianajoro</a>
+            </div>
+        </div>
+    </footer>
 </div>

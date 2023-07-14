@@ -290,11 +290,11 @@ class DemandeController extends CI_Controller
                 redirect(base_url('demande'), "Refresh");
             }
         }else{
-            $this->session->set_flashdata("valide_rapport", "Une erreur persiste lors du transfert de donné pour la demande N° $num");
+            $this->session->set_flashdata("valide_rapport", "Une erreur persiste lors du transfert de donné pour la demande");
             if ($this->isAjax()){
                 $reponse = array(
                     'error'=>$_SESSION['valide_rapport'],
-                    'demande' => $num
+                    'demande' => 0,
                 );
                 
                 echo json_encode($reponse);

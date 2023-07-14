@@ -349,18 +349,71 @@ setTimeout(function() {
         <!-- Compte script -->
 
         <script type="text/javascript">
-<?php if ($this->session->flashdata("compte")) { ?>
-swal({
-    title: "Succès!",
-    text: "<?php echo ($this->session->flashdata("compte"));?>",
-    buttons: false,
-    icon: "success",
-});
-setTimeout(function() {
-    swal.close();
-    $('#formcmpt').trigger("reset");
-}, 3000);
-<?php } ?>
+var com = $('#formcmpt');
+$(com).on('submit', function(e) {
+    e.preventDefault();
+    var inform = $(this).serialize();
+    url = $(this).attr('action');
+    $.ajax({
+        type: 'POST',
+        url: url,
+        data: inform,
+        dataType: 'json',
+        success: function(reponse) {
+            if (reponse.success) {
+                swal({
+                    title: "Succès!",
+                    text: reponse.success,
+                    buttons: false,
+                    icon: "success",
+                });
+                setTimeout(function() {
+                    swal.close();
+                    window.location.reload();
+                    $('#formcmpt').trigger("reset");
+                }, 3000);
+            } else {
+                if (reponse.error) {
+                    swal({
+                        title: "Erreur!",
+                        text: reponse.error,
+                        buttons: false,
+                        icon: "Error",
+                    });
+                    setTimeout(function() {
+                        swal.close();
+                        $('#formcmpt').trigger("reset");
+                    }, 5000);
+                } else {
+                    swal({
+                        title: "Erreur!",
+                        text: "Une erreur s'est produit dans le transfert de donnée",
+                        buttons: false,
+                        icon: "Error",
+                    });
+                    setTimeout(function() {
+                        swal.close();
+                        $('#formcmpt').trigger("reset");
+                    }, 3000);
+                }
+            }
+
+        }
+    });
+})
+
+// <?php // if ($this->session->flashdata("compte")) { ?>
+// swal({
+//     title: "Succès!",
+//     text: "<?php // echo ($this->session->flashdata("compte"));?>",
+//     buttons: false,
+//     icon: "success",
+// });
+// setTimeout(function() {
+//     swal.close();
+//     $('#formcmpt').trigger("reset");
+// }, 3000);
+// <?php // } ?>
 <?php if ($this->session->flashdata("comptemod")) { ?>
 swal({
     title: "Succès!",
