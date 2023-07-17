@@ -1,17 +1,8 @@
 <?php
 
+defined('BASEPATH') OR exit('No direct script access allowed');
     class AjaxController extends CI_Controller
     {
-
-        public function __construct()
-        {
-            parent::__construct(); 
-            $this->load->model('ModelModification');
-            $this->load->model('ModelInsertion'); 
-            $this->load->model('ModelSuppression');
-            $this->load->model('ModelSelection'); 
-            $this->load->model('ArticleModel'); 
-        }
 
         public function verification()
         {
@@ -222,7 +213,7 @@
 
         public function supprimercat($idcat)
         {
-
+            $this->load->model('ModelSuppression');
             $suppcat = new ModelSuppression;
             $suppcat->supprimercat($idcat);
             $valiny = array(
@@ -234,6 +225,7 @@
         }
         public function supprimerdiv($codediv)
         {
+            $this->load->model('ModelSuppression');
 
             $suppdiv = new ModelSuppression;
             $suppdiv->supprimerdiv($codediv);
@@ -247,6 +239,7 @@
         
         public function supprimerser($codeser)
         {
+            $this->load->model('ModelSuppression');
 
             $suppser = new ModelSuppression;
             $suppser->supprimerser($codeser);
@@ -263,6 +256,7 @@
            {
             $id = strip_tags($_POST['id']);
             $label = strip_tags($_POST['labeldivision']);
+            $this->load->model('ModelModification');
 
             $modif = new ModelModification;
             $modif->modifierdiv("UPDATE DIVISION SET LABEL_DIVISION = '$label' WHERE CODE_DIVISION = '$id'");
@@ -274,7 +268,8 @@
            }
         }
         public function entres()
-        {
+        { 
+            $this->load->model('ModelSelection');
             $model = new ModelSelection;
             $matériel['ENTRES'] = $model->selectentres("SELECT CATEGORIE.LABEL_CAT,MATERIEL.REF_MAT,MATERIEL.DESIGN_MAT,MATERIEL.SPEC_MAT FROM MATERIEL,CATEGORIE WHERE MATERIEL.ID_CAT = CATEGORIE.ID_CAT AND MATRICULE IS NULL AND CODE_DIVISION IS NULL ORDER BY LABEL_CAT ASC");
             $utilises['UTILISES'] = $model->selectutiles("SELECT CATEGORIE.LABEL_CAT,MATERIEL.REF_MAT,MATERIEL.DESIGN_MAT,MATERIEL.SPEC_MAT,MATERIEL.MATRICULE,MATERIEL.CODE_DIVISION FROM MATERIEL,CATEGORIE,AGENT,DIVISION WHERE MATERIEL.ID_CAT = CATEGORIE.ID_CAT AND MATERIEL.MATRICULE = AGENT.MATRICULE AND MATERIEL.CODE_DIVISION = DIVISION.CODE_DIVISION ORDER BY LABEL_CAT ASC");
@@ -304,6 +299,7 @@
             $referencemat = strip_tags($_POST['referencemat']);
             $datedebut = strip_tags($_POST['date_debut']);
             $nombre=1;
+            $this->load->model('ModelModification');
             $modelmodif = new ModelModification;
             $requete=$modelmodif->modifiermateriel("UPDATE MATERIEL set NOMBRE='$nombre',DATE_DEB=TO_DATE('$datedebut','YYYY-MM-DD'),MATRICULE='$detenteur',CODE_DIVISION='$division' WHERE REF_MAT = '$referencemat'");
             
@@ -373,6 +369,7 @@
                 '$serv'
                 )"
             );
+            $this->load->model('ModelModification');
 
         
 
@@ -409,6 +406,7 @@
             $specificite = strip_tags($_POST['specificite']);
             $designation = strip_tags($_POST['designation']);
             $referencemat = strip_tags($_POST['reference']);
+            $this->load->model('ModelModification');
             $modelmodif = new ModelModification;
             $requete=$modelmodif->modifiermateriel("UPDATE MATERIEL set ETAT_MAT=q'[$nouvetat]', DESIGN_MAT='$designation', SPEC_MAT=q'[$specificite]' WHERE REF_MAT = '$referencemat'");
             $data = array(
@@ -425,6 +423,7 @@
             $designation = strip_tags($_POST['designation1']);
             $referencemat = strip_tags($_POST['reference1']);
             $datedebv = strip_tags($_POST['date_deb']);
+            $this->load->model('ModelModification');
             $modelmodif = new ModelModification;
             $requete=$modelmodif->modifiermateriel("UPDATE MATERIEL set ETAT_MAT=q'[$nouvetat]', DESIGN_MAT='$designation', SPEC_MAT=q'[$specificite]', DATE_DEB=TO_DATE('$datedebv', 'YYYY-MM-DD') WHERE REF_MAT = '$referencemat'");
             $data = array(
@@ -516,6 +515,7 @@
             $ref_sort = strip_tags($_POST['ref_sort']);
             $observation = strip_tags($_POST['observation']);
             $id_sort = strip_tags($_POST['id_sort']);
+            $this->load->model('ModelModification');
             $modelmodif = new ModelModification;
             $modelmodif->modifsortie("UPDATE SORTIE set STATUT=q'[$statut]', DATE_SORT=TO_DATE('$date_sort', 'YYYY-MM-DD'), REF_SORT='$ref_sort',MOTIF_SORT=q'[$observation]' WHERE ID_SORTIE = '$id_sort'");
             $data = array(
@@ -527,6 +527,7 @@
 
         public function condmatentres()
         {
+            $this->load->model('ModelInsertion'); 
             $reference = strip_tags($_POST['refmatentres']);
             $statut = strip_tags($_POST['statut']);
             $date_sort = strip_tags($_POST['date_sort']);
@@ -587,7 +588,8 @@
 
         public function detenteur()
         {
-            $serv = $_SESSION['agent_ser']['0']['CODE_SER'];
+            $serviceG = $_SESSION['agent_ser'];
+            $serv = $serviceG['0']['CODE_SER'];
             $val = strip_tags($_POST['val']);
             $all = $this->db->query("SELECT AGENT.MATRICULE, AGENT.NOM_AG, AGENT.PRENOM_AG, COUNT(AGENT.MATRICULE) AS LIGNE FROM AGENT,DIVISION,SERVICE WHERE AGENT.CODE_DIVISION = DIVISION.CODE_DIVISION AND SERVICE.CODE_SER = DIVISION.CODE_SER AND SERVICE.CODE_SER = '$serv' AND  AGENT.CODE_DIVISION != 'AUTEUR' AND (LOWER(AGENT.NOM_AG) LIKE '%$val%' OR LOWER(AGENT.PRENOM_AG) LIKE '%$val%' OR LOWER(AGENT.MATRICULE) LIKE '%$val%') GROUP BY AGENT.MATRICULE, AGENT.NOM_AG, AGENT.PRENOM_AG");
             

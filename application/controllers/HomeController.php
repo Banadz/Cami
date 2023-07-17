@@ -93,7 +93,8 @@ class HomeController extends CI_Controller
 
     public function sesagents()
     {
-        $service = $_SESSION['agent_ser']['0']['CODE_SER'];
+        $serviceG = $this->session->userdata('agent_ser');
+        $service = $serviceG['0']['CODE_SER'];
         $requete = $this->db->query("SELECT AGENT.MATRICULE, AGENT.NOM_AG, AGENT.PRENOM_AG, AGENT.CODE_DIVISION FROM AGENT,DIVISION,SERVICE WHERE AGENT.CODE_DIVISION = DIVISION.CODE_DIVISION AND DIVISION.CODE_SER = SERVICE.CODE_SER AND SERVICE.CODE_SER = '$service'");
         $ag['AGENTS'] = $requete->result();
 

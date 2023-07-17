@@ -21,7 +21,7 @@ $(document).ready(function () {
         } else {
             var val = $(this).val().toLowerCase();
             $.ajax({
-                url:'http://localhost/GPS/AjaxController/detenteur',
+                url:'http://192.168.88.40/GPS/AjaxController/detenteur',
                 type:'POST',
                 data: {val: val},
                 dataType:'json',
@@ -40,7 +40,7 @@ $(document).ready(function () {
                                     $('#detenteur').blur(function () {
                                         var selecval = $('#detenteur option:selected').val();
                                         $.ajax({
-                                            url:'http://localhost/GPS/AjaxController/getdet',
+                                            url:'http://192.168.88.40/GPS/AjaxController/getdet',
                                             type:'POST',
                                             data: {matr:selecval},
                                             dataType:'json',
@@ -59,7 +59,7 @@ $(document).ready(function () {
                                     $('#detenteur').change(function () {
                                         var selecval = $('#detenteur option:selected').val();
                                         $.ajax({
-                                            url:'http://localhost/GPS/AjaxController/getdet',
+                                            url:'http://192.168.88.40/GPS/AjaxController/getdet',
                                             type:'POST',
                                             data: {matr:selecval},
                                             dataType:'json',
