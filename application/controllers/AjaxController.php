@@ -3,6 +3,9 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
     class AjaxController extends CI_Controller
     {
+        public function isAjax(){
+            return !empty ($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH'])=='xmlhttprequest';
+        }
 
         public function verification()
         {
@@ -325,19 +328,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         public function updateassets()
         {
-
             
+            $this->load->model('ModelModification');   
             //Update POST
             $ref_mat=strip_tags($_POST['referencemat']);
             $date_deb=strip_tags($_POST['date_deb']);
             $matricule=strip_tags($_POST['det']);
             $serv=strip_tags($_POST['service']);
 
-            $all = $this->db->query("SELECT * FROM MATERIEL WHERE REF_MAT = '$ref_mat'");
+            $all = $this->db->query("SELECT * FROM MATERIEL WHERE REF_MAT = q'[$ref_mat]'");
             $valiny = $all->row_array();
 
             //Insert POST
             $design_mat = $valiny['DESIGN_MAT'];
+            
             $spec_mat = $valiny['SPEC_MAT'];
             $org_taloha = $valiny['ID_ORIGINE'];
             $nbr_taloha = $valiny['NOMBRE'];
@@ -369,14 +373,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 '$serv'
                 )"
             );
-            $this->load->model('ModelModification');
-
-        
-
             $service = new ModelModification;
             $service->editAssets_code("UPDATE MATERIEL SET DATE_DEB=TO_DATE('$date_deb','YYYY-MM-DD'),MATRICULE='$matricule' WHERE REF_MAT = '$ref_mat'");
 
-
+            // var_dump($ref_mat);
             
 
             // echo json_encode($ref_mat);

@@ -694,9 +694,11 @@ $sortie = $requetesort->result();
                                                                                                 id="remove2">
                                                                                                 <button
                                                                                                     class="btn btn-primary btn-border nomencltable"
-                                                                                                    type="button"
-                                                                                                    id=""><i
-                                                                                                        class="icon-user-unfollow"></i></button>
+                                                                                                    type="button" id="">
+                                                                                                    <i
+                                                                                                        class="icon-user-unfollow">
+                                                                                                    </i>
+                                                                                                </button>
                                                                                             </div>
                                                                                         </div>
                                                                                         <select name="det" id="det"

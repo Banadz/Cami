@@ -734,9 +734,9 @@ $(document).ready(function () {
             var donnee = $tr.children('td').map(function (){
                 return $(this).text();
             }).get();
-            var reference = donnee[1];
-            var specificite = donnee[3];
-            var det = donnee[4];
+            var reference = donnee[0];
+            var specificite = donnee[2];
+            var det = donnee[3];
             var etat = donnee[6];
 
             $('#title').remove();

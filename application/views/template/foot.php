@@ -522,6 +522,7 @@ $(document).ready(function() {
     setTimeout(function() {
         swal.close();
     }, 3000);
+
     <?php } ?>
 
     <?php if ($this->session->flashdata("assets")) { ?>
@@ -534,7 +535,9 @@ $(document).ready(function() {
     setTimeout(function() {
         swal.close();
     }, 3000);
-    <?php } ?>
+
+
+    <?php $this->session->unset_flashdata("assets");} ?>
     <?php if ($this->session->flashdata("materiel")) { ?>
     swal({
         title: "Succès!",
@@ -545,6 +548,7 @@ $(document).ready(function() {
     setTimeout(function() {
         swal.close();
     }, 3000);
+
     <?php } ?>
 });
         </script>
