@@ -802,6 +802,55 @@ $(document).ready(function () {
                     $('.enregistrer').css('cursor', 'default');
                 }
             });
+            var valideChange = $('#formdetchange')
+            $(valideChange).on('submit', function (e){
+                e.preventDefault()
+                dataChange = $(this).serialize()
+                url = $(this).attr('action')
+                // console.log(dataChange)
+                $.ajax({
+                    url:url,
+                    type:'POST',
+                    data:dataChange,
+                    dataType:'json',
+                    success:function(answer, stat){
+                        if (answer){
+                            if (answer.success){
+                                swal({
+                                    title: "Succès!",
+                                    text: answer.success,
+                                    buttons: false,
+                                    icon: "success",
+                                });
+                                setTimeout(function() {
+                                    swal.close();
+                                }, 3000);
+                            }else{
+                                swal({
+                                    title: "Erreur",
+                                    text: "Erreur dans la réception de données",
+                                    buttons: false,
+                                    icon: "error",
+                                });
+                                setTimeout(function() {
+                                    swal.close();
+                                }, 3000);
+                            }
+                            
+                        }else{
+                            swal({
+                                title: "Erreur",
+                                text: "Une erreur dans le transfert de donées",
+                                buttons: false,
+                                icon: "error",
+                            });
+                            setTimeout(function() {
+                                swal.close();
+                            }, 3000);
+                        }
+                    }
+                })
+            })
         });
     });
 
@@ -885,6 +934,7 @@ $(document).ready(function () {
     })
 
 
+    
 
     var deconnecter = $('#deconnecter')
     $(deconnecter).on('click', function () {

@@ -401,19 +401,6 @@ $(com).on('submit', function(e) {
         }
     });
 })
-
-// <?php // if ($this->session->flashdata("compte")) { ?>
-// swal({
-//     title: "Succès!",
-//     text: "<?php // echo ($this->session->flashdata("compte"));?>",
-//     buttons: false,
-//     icon: "success",
-// });
-// setTimeout(function() {
-//     swal.close();
-//     $('#formcmpt').trigger("reset");
-// }, 3000);
-// <?php // } ?>
 <?php if ($this->session->flashdata("comptemod")) { ?>
 swal({
     title: "Succès!",
@@ -516,32 +503,6 @@ $(document).ready(function() {
     swal({
         title: "Succès!",
         text: "<?php echo ($this->session->flashdata("catmod"));?>",
-        buttons: false,
-        icon: "success",
-    });
-    setTimeout(function() {
-        swal.close();
-    }, 3000);
-
-    <?php } ?>
-
-    <?php if ($this->session->flashdata("assets")) { ?>
-    swal({
-        title: "Succès!",
-        text: "<?php echo ($this->session->flashdata("assets"));?>",
-        buttons: false,
-        icon: "success",
-    });
-    setTimeout(function() {
-        swal.close();
-    }, 3000);
-
-
-    <?php $this->session->unset_flashdata("assets");} ?>
-    <?php if ($this->session->flashdata("materiel")) { ?>
-    swal({
-        title: "Succès!",
-        text: "<?php echo ($this->session->flashdata("materiel"));?>",
         buttons: false,
         icon: "success",
     });

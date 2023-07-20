@@ -10,52 +10,7 @@
             parent::__construct(); 
             $this->load->model('ModelInsertion');  
         }
-        public function ajoutassets()
-        {
-            $ref_mat = $_POST['ref_mat'];
-            $id_nom = $_POST['id_nom'];
-            $id_cmpt = $_POST['id_cmpt'];
-            $id_cat = $_POST['id_cat'];
-            $design_mat = $_POST['design_mat'];
-            $spec_mat = $_POST['spec_mat'];
-            $etat_mat = $_POST['etat_mat'];
-            $origine = $_POST['origine'];
-            $attestation = $_POST['attestation'];
-            $montant = $_POST['montant'];
-            $date_org = $_POST['date_org'];
-            $qte = $_POST['quantite'];
-            $ser = $_SESSION['agent_ser']['0']['CODE_SER'];
-
-            
-            $this->db->query("INSERT INTO ORIGINE(ID_ORIGINE,CODE_SER,QUANTITE_ORG,MONTANT_ORG,DATE_ORG,RECU_ORG) VALUES(
-                ID_ORIGINE.nextval,
-                '$origine',
-                '$qte',
-                '$montant',
-                TO_DATE('$date_org','YYYY-MM-DD'),
-                '$attestation'
-            )");
-            $reqid = $this->db->query("SELECT ID_ORIGINE FROM ORIGINE ORDER BY ID_ORIGINE DESC");
-            $resulat1 = $reqid->row_array();
-            $idorig = $resulat1['ID_ORIGINE'];
-
-            $this->db->query("INSERT INTO MATERIEL(REF_MAT,DESIGN_MAT,SPEC_MAT,ETAT_MAT,ID_NOM,NUM_CMPT,ID_CAT,ID_ORIGINE,SORTIE,CODE_SER) VALUES(
-            '$ref_mat',
-            '$design_mat',
-            '$spec_mat',
-            '$etat_mat',
-            '$id_nom',
-            '$id_cmpt',
-            '$id_cat',
-            '$idorig',
-            NULL,
-            '$ser'
-            )");
-            
-            $this->session->set_flashdata("materiel", "Un nouveau matériel entré");
-            redirect(base_url()."assets", "refresh");
-            
-        }
+        
         public function ajoutcmpt_nom()
         {
             if (isset($_POST)) {

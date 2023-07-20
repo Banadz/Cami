@@ -220,7 +220,7 @@ $sortie = $requetesort->result();
                                                             </div>
                                                         </div>
                                                         <!-- Formulaire ajout matériel -->
-                                                        <form action="<?= base_url().'Ajouter/ajoutassets'?>"
+                                                        <form action="<?php echo(base_url().'insereMat');?>"
                                                             method="POST" id="formmodalassets">
                                                             <div class="row form-group">
                                                                 <div class="form-group col-6">
@@ -1115,3 +1115,5 @@ $sortie = $requetesort->result();
 <script src="<?php echo base_url('bootstrap/myapps/jquery/assets.js');?>" defer></script>
 <!-- verification -->
 <script src="<?php echo base_url('bootstrap/myapps/jquery/verification.js');?>" defer></script>
+<!-- rectification de notification -->
+<script src="<?php echo base_url('bootstrap/myapps/jquery/rectNotification.js');?>"></script>

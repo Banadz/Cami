@@ -157,3 +157,6 @@ $route['listenomenclature'] = 'ListController/listenomenclature';
 $route['listeservice'] = 'ListController/listeservice';
 $route['listedivision'] = 'ListController/listedivision';
 $route['listecategorie'] = 'ListController/listecategorie';
+
+// Insérer matériel
+$route['insereMat'] = 'AjaxController/ajoutassets';

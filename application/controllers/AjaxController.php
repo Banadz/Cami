@@ -375,14 +375,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             );
             $service = new ModelModification;
             $service->editAssets_code("UPDATE MATERIEL SET DATE_DEB=TO_DATE('$date_deb','YYYY-MM-DD'),MATRICULE='$matricule' WHERE REF_MAT = '$ref_mat'");
-
-            // var_dump($ref_mat);
             
-
-            // echo json_encode($ref_mat);
-
             $this->session->set_flashdata("assets", "Matériel ".$ref_mat." détenu par l\'agent qui porte N° matricule ".$matricule."!");
-            redirect(base_url('assets'));
+            if ($this->isAjax()){
+                $reponse = array(
+                    'success'=> $_SESSION['assets']
+                );
+                echo json_encode($reponse);
+            }else{    
+                redirect(base_url('assets', "Refresh"));
+            }
+            
         }
 
         public function materielmodifie()
@@ -617,6 +620,66 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             );
 
             echo json_encode($data);
+        }
+
+
+        //  esssai
+
+        public function ajoutassets()
+        {
+            $ref_mat = strip_tags($_POST['ref_mat']);
+            $id_nom = strip_tags($_POST['id_nom']);
+            $id_cmpt = strip_tags($_POST['id_cmpt']);
+            $id_cat = strip_tags($_POST['id_cat']);
+            $design_mat = strip_tags($_POST['design_mat']);
+            $spec_mat = strip_tags($_POST['spec_mat']);
+            $etat_mat = strip_tags($_POST['etat_mat']);
+            $origine = strip_tags($_POST['origine']);
+            $attestation = strip_tags($_POST['attestation']);
+            $montant = strip_tags($_POST['montant']);
+            $date_org = strip_tags($_POST['date_org']);
+            $qte = strip_tags($_POST['quantite']);
+            $ser = $_SESSION['agent_ser']['0']['CODE_SER'];
+
+            
+            $this->db->query("INSERT INTO ORIGINE(ID_ORIGINE,CODE_SER,QUANTITE_ORG,MONTANT_ORG,DATE_ORG,RECU_ORG) VALUES(
+                ID_ORIGINE.nextval,
+                '$origine',
+                '$qte',
+                '$montant',
+                TO_DATE('$date_org','YYYY-MM-DD'),
+                '$attestation'
+            )");
+            $reqid = $this->db->query("SELECT ID_ORIGINE FROM ORIGINE ORDER BY ID_ORIGINE DESC");
+            $resulat1 = $reqid->row_array();
+            $idorig = $resulat1['ID_ORIGINE'];
+
+            $this->db->query("INSERT INTO MATERIEL(REF_MAT,DESIGN_MAT,SPEC_MAT,ETAT_MAT,ID_NOM,NUM_CMPT,ID_CAT,ID_ORIGINE,SORTIE,CODE_SER) VALUES(
+            '$ref_mat',
+            '$design_mat',
+            '$spec_mat',
+            '$etat_mat',
+            '$id_nom',
+            '$id_cmpt',
+            '$id_cat',
+            '$idorig',
+            NULL,
+            '$ser'
+            )");
+            
+            $this->session->set_flashdata("materiel", "Un nouveau matériel entré");
+            
+            if ($this->isAjax()){
+                $reponse = array(
+                    'success'=> $_SESSION['materiel']
+                );
+                
+                echo json_encode($reponse);
+            }else{    
+                redirect(base_url('assets', "Refresh"));
+            }
+            
+            
         }
 
     }

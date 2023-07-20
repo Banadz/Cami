@@ -18,7 +18,7 @@ $(document).ready(function () {
                     if (result.success) {
                         var reference = result.refemat;
                         $.each(reference, function(i,v){
-                            console.log(v['REF_MAT']);
+                            // console.log(v['REF_MAT']);
                             if (v['REF_MAT']) {
                                 $('#reference').fadeIn("slow");
                                 $('#reference').text("Référence matériel "+ valref +" existe déjà!");
@@ -101,7 +101,7 @@ $(document).ready(function () {
                     if (result.success) {
                         var cmpt = result.numcmpt;
                         $.each(cmpt, function(i,v){
-                            console.log(v['NUM_CMPT']);
+                            // console.log(v['NUM_CMPT']);
                             if (v['NUM_CMPT']) {
                                 $('#comptes').fadeIn("slow");
                                 $('#comptes').text("Compte "+ valcompte +" existe déjà!");
@@ -139,7 +139,7 @@ $(document).ready(function () {
                     if (result.success) {
                         var design = result.descmpt;
                         $.each(design, function(i,v){
-                            console.log(v['DESIGNATION_CMPT']);
+                            // console.log(v['DESIGNATION_CMPT']);
                             if (v['DESIGNATION_CMPT']) {
                                 $('#designation').fadeIn("slow");
                                 $('#designation').text("Libellé "+ valdes +" existe déjà!");
@@ -181,7 +181,7 @@ $(document).ready(function () {
                     if (result.success) {
                         var nomencl = result.numnomencl;
                         $.each(nomencl, function(i,v){
-                            console.log(v['ID_NOM']);
+                            // console.log(v['ID_NOM']);
                             if (v['ID_NOM']) {
                                 $('#nomenclnum').fadeIn("slow");
                                 $('#nomenclnum').text("Nomenclature N° "+ valid +" existe déjà!");
@@ -220,7 +220,7 @@ $(document).ready(function () {
                     if (result.success) {
                         var detnomencl = result.detnomencl;
                         $.each(detnomencl, function(i,v){
-                            console.log(v['DETAIL_NOM']);
+                            // console.log(v['DETAIL_NOM']);
                             if (v['DETAIL_NOM']) {
                                 $('#item').fadeIn("slow");
                                 $('#item').text("Item "+ valdet +" existe déjà!");
@@ -264,7 +264,7 @@ $(document).ready(function () {
                     if (result.success) {
                         var div = result.codediv;
                         $.each(div, function(i,v){
-                            console.log(v['CODE_SER']);
+                            // console.log(v['CODE_SER']);
                             if (v['CODE_SER'] == codeser) {
                                 $('#divcode').fadeIn("slow");
                                 $('#divcode').text("Code division "+ division +" existe déjà!");
@@ -305,7 +305,7 @@ $(document).ready(function () {
                     if (result.success) {
                         var ser = result.codeser;
                         $.each(ser, function(i,v){
-                            console.log(v['CODE_SER']);
+                            // console.log(v['CODE_SER']);
                             if (v['CODE_SER']) {
                                 $('#sercode').fadeIn("slow");
                                 $('#sercode').text("Code service "+ service +" existe déjà!");
