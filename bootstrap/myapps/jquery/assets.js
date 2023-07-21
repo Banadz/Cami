@@ -185,7 +185,10 @@ $(document).ready(function () {
         }
     })
 
-
+    function stripTags(input) {
+        return input.replace(/<[^>]+>/g, '');
+    }
+      
     var nomencltable = $('.nomencltable'), insertnomencl = $('.insertnomencl');
     $(nomencltable).each(function () {
         $(this).on('click', function (e) {
@@ -200,16 +203,19 @@ $(document).ready(function () {
                         return $(this).text();
                     }).get();
         
-                    var idnomencl = nomencldata[0];
-                    var item = nomencldata[1];
+                    var idnomencl = stripTags(nomencldata[0])
+                    var item = stripTags(nomencldata[1]);
                     
+                    console.log(idnomencl);
+
                     $('#nomencltable').modal('toggle');
 
                     $('.nomenclature').each(function () {
-                        $(this).attr('value', idnomencl+' - '+item);
+                        $(this).val((idnomencl.trim()+` - `+item.trim()).trim());
                     })
                     $('.nomenclaturehide').each(function () {
-                        $(this).attr('value', idnomencl);
+                        $(this).attr('value', idnomencl.trim());
+                        $(this).attr('id', idnomencl.trim());
                     })
                 })
             })
@@ -236,11 +242,11 @@ $(document).ready(function () {
                     $('#comptetable').modal('toggle');
 
                     $('.compte').each(function () {
-                        $(this).attr('value', compte+' - '+libelle);
-                        $(this).attr('id', comptedata[1]);
+                        $(this).attr('value', (compte.trim()+' - '+libelle.trim()).trim());
+                        $(this).attr('id', comptedata[1].trim());
                     })
                     $('.comptehide').each(function () {
-                        $(this).attr('value', compte);
+                        $(this).attr('value', compte.trim());
                     })
                 })
             })
@@ -291,10 +297,10 @@ $(document).ready(function () {
                                     $('#categorietable').modal('toggle');
                 
                                     $('.categorie').each(function () {
-                                        $(this).attr('value', categorie);
+                                        $(this).attr('value', categorie.trim());
                                     })
                                     $('.categoriehide').each(function () {
-                                        $(this).attr('value', idcat);
+                                        $(this).attr('value', idcat.trim());
                                     })
                                 })
                             })

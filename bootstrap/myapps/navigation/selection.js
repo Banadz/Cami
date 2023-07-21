@@ -13,8 +13,8 @@ $(document).ready(function(){
                 }).get();
                 $('#selectCompte').modal('toggle');
                 $('.areaCompte').each(function(){
-                    $(this).attr('value', info[0]+' - ' + info[1])
-                    $(this).attr('id', info[0])
+                    $(this).attr('value', (info[0].trim()+' - ' + info[1].trim()).trim())
+                    $(this).attr('id', info[0].trim())
                 })
             })
         })
@@ -34,7 +34,7 @@ $(document).ready(function(){
                     if(resultat.success){
                         tableCategorie =$('#add-rowCategorie').DataTable();
                         tableCategorie.rows().remove().draw();
-                        console.log(resultat.categorie)
+                        // console.log(resultat.categorie)
                         if (resultat.categorie[0].length !== 1 ){
                             $('#selectCategorie').modal('show');
                             var resu = resultat.categorie;
@@ -62,8 +62,8 @@ $(document).ready(function(){
                                     }).get();
                                     $('#selectCategorie').modal('toggle');
                                     $('.areaCategorie').each(function(){
-                                        $(this).attr('value', cati[1])
-                                        $(this).attr('id', cati[0])
+                                        $(this).attr('value', cati[1].trim())
+                                        $(this).attr('id', cati[0].trim())
                                     })
                                 })
                             })
@@ -126,7 +126,7 @@ $(document).ready(function(){
                             });
                         }else{
                             $('.areaCategorie').each(function(){
-                                $(this).attr('value',resultat.categorie)
+                                $(this).attr('value',resultat.categorie.trim())
                             });
                         }   
                     }else{

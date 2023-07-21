@@ -439,6 +439,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         public function sortir()
         {
+            $this->load->model('ModelInsertion');  
             $reference = strip_tags($_POST['refmatsort']);
             $statut = strip_tags($_POST['statut']);
             $date_sort = strip_tags($_POST['date_sort']);

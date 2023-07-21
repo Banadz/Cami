@@ -20,8 +20,8 @@ $(document).ready(function(){
                 }).get();
                 $('#selectCat').modal('toggle');
                 $('.zoneCategorie').each(function(){
-                    $(this).attr('value', benzema[0]+' - ' + benzema[1])
-                    $(this).attr('id', benzema[0])
+                    $(this).attr('value', (benzema[0].trim()+' - ' + benzema[1].trim()).trim())
+                    $(this).attr('id', benzema[0].trim())
                 })
             })
         })
@@ -71,12 +71,12 @@ $(document).ready(function(){
                                     // console.log(resu[articulation[0]])
                                     $('#selectArt').modal('toggle');
                                     $('.zoneArticle').each(function(){
-                                        $(this).attr('value', articulation[1]+' '+ articulation[2])
-                                        $(this).attr('id', articulation[0])
+                                        $(this).attr('value', (articulation[1].trim()+' '+ articulation[2].trim()).trim())
+                                        $(this).attr('id', articulation[0].trim())
                                     })
                                     $('.quantico').each(function(){
-                                        $(this).html(articulation[3])
-                                        $(this).attr('id', articulation[3])
+                                        $(this).html(articulation[3].trim())
+                                        $(this).attr('id', articulation[3].trim())
                                     })
                                     // $('.zoneQuant').each(function(){
                                     //     // $(this).attr('id', stock)
@@ -254,22 +254,22 @@ $(document).ready(function(){
 
             $('#editDem').modal('show')
             $('.up_DemCat').each(function(){
-                $(this).attr('value', cataLib)
+                $(this).attr('value', cataLib.trim())
             })
             $('.up_Demdesign').each(function(){
-                $(this).attr('value', design)
+                $(this).attr('value', design.trim())
             })
             $('.up_Demspecifi').each(function(){
-                $(this).attr('value', specifi)
+                $(this).attr('value', specifi.trim())
             })
             $('.up_DemQuant').each(function(){
-                $(this).attr('value', laligne[4])
+                $(this).attr('value', laligne[4].trim())
             })
             $('.up_quantico').each(function(){
-                $(this).html(laligne[5])
+                $(this).html(laligne[5].trim())
             })
             $('.dem_articlce').each(function(){
-                $(this).html(laligne[2]+' '+laligne[3])
+                $(this).html((laligne[2].trim()+' '+laligne[3].trim()).trim())
             })
             $('#up_demande').on('submit',function(defender){
                 defender.preventDefault()

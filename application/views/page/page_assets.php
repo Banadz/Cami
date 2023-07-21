@@ -229,9 +229,8 @@ $sortie = $requetesort->result();
                                                                         <input type="hidden"
                                                                             class="form-control nomenclaturehide"
                                                                             aria-label="Text input with dropdown button"
-                                                                            id="id_nom" name="id_nom">
-                                                                        <input type="hidden"
-                                                                            class="form-control nomenclaturehide"
+                                                                            id="" name="id_nom">
+                                                                        <input type="hidden" class="form-control"
                                                                             value="<?php echo $_SESSION['agent_ser']['0']['CODE_SER'];?>"
                                                                             aria-label="Text input with dropdown button"
                                                                             id="service" name="service">

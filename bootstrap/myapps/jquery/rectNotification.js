@@ -12,28 +12,17 @@ $(document).ready(function(){
             datatype:'json',
             success:function(answer, stat){
                 if (answer){
-                    if (answer.success){
-                        swal({
-                            title: "Succès!",
-                            text: answer.success,
-                            buttons: false,
-                            icon: "success",
-                        });
-                        setTimeout(function() {
-                            swal.close();
-                        }, 3000);
-                    }else{
-                        swal({
-                            title: "Erreur",
-                            text: "Erreur dans la réception de données",
-                            buttons: false,
-                            icon: "error",
-                        });
-                        setTimeout(function() {
-                            swal.close();
-                        }, 3000);
-                    }
+                    swal({
+                        title: "Succès!",
+                        text: "Un nouveau matériel entré",
+                        buttons: false,
+                        icon: "success",
+                    });
+                    setTimeout(function() {
+                        swal.close();
+                    }, 3000);
                     
+                    window.location.reload();
                 }else{
                     swal({
                         title: "Erreur",
