@@ -20,9 +20,8 @@ $(document).ready(function(){
                     });
                     setTimeout(function() {
                         swal.close();
+                        window.location.reload();
                     }, 3000);
-                    
-                    window.location.reload();
                 }else{
                     swal({
                         title: "Erreur",

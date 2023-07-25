@@ -628,6 +628,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         public function ajoutassets()
         {
+            
             $ref_mat = strip_tags($_POST['ref_mat']);
             $id_nom = strip_tags($_POST['id_nom']);
             $id_cmpt = strip_tags($_POST['id_cmpt']);

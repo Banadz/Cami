@@ -1,5 +1,5 @@
 <div class="main-panel">
-    <div class="content">
+    <div class="content" style="background-image: url(<?php echo base_url();?>/bootstrap/images/background-type3.jpg);">
         <div class="panel-header bg-primary-gradient">
             <div class="page-inner py-5">
                 <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
@@ -15,7 +15,7 @@
                 <div class="col-md-6">
                     <div class="card full-height">
                         <div class="card-body">
-                            <div class="card-title">Briefing de votre demande posté</div>
+                            <div class="card-title">Tableau de bord de votre demande posté</div>
                             <div class="d-flex flex-wrap justify-content-around pb-2 pt-4">
                                 <div class="px-2 pb-2 pb-md-0 text-center">
                                     <div id="circles-1"></div>
@@ -36,6 +36,7 @@
             </div>
         </div>
         <div class="modal" id="salutation">
+
             <div class="modal-dialog" style="height:100%;" role="document">
                 <div class="modal-content">
                     <div class="modal-header no-bd" style="margin-bottom:5%;">
@@ -133,10 +134,10 @@ $(document).ready(function() {
 Circles.create({
     id: 'circles-1',
     radius: 45,
-    value: <?php echo $dash['WAI'];?>,
+    value: <?php if ($dash['WAI'] !== 0 || $dash['WAI'] !== ''){echo $dash['WAI'];}else{ echo '0';} ?>,
     maxValue: <?php echo $dash['SOM'];?>,
     width: 7,
-    text: <?php echo $dash['WAI'];?>,
+    text: '<?php if ($dash['WAI'] !== 0 || $dash['WAI'] !== ''){echo $dash['WAI'];}else{ echo '0';}//echo $dash['WAI'];?>',
     colors: ['#f1f1f1', '#efe00c'],
     duration: 400,
     wrpClass: 'circles-wrp',
@@ -148,10 +149,10 @@ Circles.create({
 Circles.create({
     id: 'circles-2',
     radius: 45,
-    value: <?php echo $dash['VAL'];?>,
+    value: <?php if ($dash['VAL'] !== 0 || $dash['VAL'] !== ''){echo $dash['VAL'];}else{ echo '0';}//echo $dash['VAL'];?>,
     maxValue: <?php echo $dash['SOM'];?>,
     width: 7,
-    text: <?php if($dash['VAL'] !=0){echo $dash['VAL'];}else{ $zero = 0; echo ('0');}?>,
+    text: '<?php if ($dash['VAL'] !== 0 || $dash['VAL'] !== ''){echo $dash['VAL'];}else{ echo '0';}?>',
     colors: ['#f1f1f1', '#1c28d6'],
     duration: 400,
     wrpClass: 'circles-wrp',
@@ -163,10 +164,10 @@ Circles.create({
 Circles.create({
     id: 'circles-3',
     radius: 45,
-    value: <?php echo $dash['DEN'];?>,
+    value: <?php if ($dash['DEN'] !== 0 || $dash['DEN'] !== ''){echo $dash['DEN'];}else{ echo '0';}//echo $dash['DEN'];?>,
     maxValue: <?php echo $dash['SOM'];?>,
     width: 7,
-    text: <?php echo $dash['DEN'];?>,
+    text: '<?php if ($dash['DEN'] !== 0 || $dash['DEN'] !== ''){echo $dash['DEN'];}else{ echo '0';}?>',
     colors: ['#f1f1f1', '#d70000'],
     duration: 400,
     wrpClass: 'circles-wrp',

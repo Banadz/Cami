@@ -205,18 +205,6 @@
                                                                                                         </th>
                                                                                                     </tr>
                                                                                                 </thead>
-                                                                                                <tfoot>
-                                                                                                    <tr>
-                                                                                                        <th>N°</th>
-                                                                                                        <th>Désignation
-                                                                                                        </th>
-                                                                                                        <th>Spécificition
-                                                                                                        </th>
-                                                                                                        <th>Unité</th>
-                                                                                                        <th>Opération
-                                                                                                        </th>
-                                                                                                    </tr>
-                                                                                                </tfoot>
                                                                                                 <tbody
                                                                                                     id="bodytableArtcile">
 
