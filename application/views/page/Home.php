@@ -5,7 +5,7 @@
                 <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
                     <div>
                         <h2 class="text-white pb-2 fw-bold">Accueil</h2>
-                        <h5 class="text-white op-7 mb-2">Gestion du Patrimoine et de Stock</h5>
+                        <h5 class="text-white op-7 mb-2">Comptabilité Administrative et des Matières Informatisées</h5>
                     </div>
                 </div>
             </div>
@@ -15,7 +15,7 @@
                 <div class="col-md-6">
                     <div class="card full-height">
                         <div class="card-body">
-                            <div class="card-title">Tableau de bord de votre demande posté</div>
+                            <div class="card-title">Tableau de bord de votre activité</div>
                             <div class="d-flex flex-wrap justify-content-around pb-2 pt-4">
                                 <div class="px-2 pb-2 pb-md-0 text-center">
                                     <div id="circles-1"></div>
@@ -52,7 +52,7 @@
                         </p>
                     </div>
                     <div class="modal-footer no-bd" id="pied">
-                        <a href="http://192.168.88.40/GPS/user/profil">
+                        <a href="http://192.168.88.40/CAMI/user/profil">
                             <button type="button" id="oui" class="btn btn-warning">Oui</button>
                         </a>
                     </div>

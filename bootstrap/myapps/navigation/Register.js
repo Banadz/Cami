@@ -18,7 +18,7 @@ $(document).ready(function(){
         im = $(this).val();
         // alert(im);
         $.ajax({
-            url:'http://192.168.88.40/GPS/UserController/im_control',
+            url:'http://192.168.88.40/CAMI/UserController/im_control',
             type:'GET',
             data:'im='+im,
             dataType:'json',
@@ -42,7 +42,7 @@ $(document).ready(function(){
         mail = $(this).val();
         // alert(im);
         $.ajax({
-            url:'http://192.168.88.40/GPS/UserController/mail_control',
+            url:'http://192.168.88.40/CAMI/UserController/mail_control',
             type:'GET',
             data:'mail='+mail,
             dataType:'json',
@@ -125,7 +125,7 @@ $(document).ready(function(){
                 var service_selected = $("#id_service option:selected").val();
                 // alert(service_selected);
                 $.ajax({
-                    url:'http://192.168.88.40/GPS/UserController/getDivision',
+                    url:'http://192.168.88.40/CAMI/UserController/getDivision',
                     type:'GET',
                     data:'service='+service_selected,
                     dataType:'json',
@@ -148,7 +148,7 @@ $(document).ready(function(){
                     var service_selected = $("#id_service option:selected").val();
                     // alert(service_selected);
                     $.ajax({
-                        url:'http://192.168.88.40/GPS/UserController/getDivision',
+                        url:'http://192.168.88.40/CAMI/UserController/getDivision',
                         type:'GET',
                         data:'service='+service_selected,
                         dataType:'json',
@@ -172,7 +172,7 @@ $(document).ready(function(){
                     var service_selected = $("#id_service option:selected").val();
                     // alert(service_selected);
                     $.ajax({
-                        url:'http://192.168.88.40/GPS/UserController/getDivision',
+                        url:'http://192.168.88.40/CAMI/UserController/getDivision',
                         type:'GET',
                         data:'service='+service_selected,
                         dataType:'json',

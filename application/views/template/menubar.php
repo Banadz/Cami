@@ -119,8 +119,7 @@
                                     </li>
                                     <li>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item"
-                                            href="<?php echo  base_url(); ?>user/profil">Profile</a>
+                                        <a class="dropdown-item" href="<?php echo  base_url(); ?>user/profil">Profil</a>
                                         <a class="dropdown-item" id="deconnecter" href="#">Se déconnecter</a>
                                     </li>
                                 </div>
@@ -267,9 +266,9 @@
         <?php if  ($_SESSION['agent']['PASSWORD'] == '0000' || $_SESSION['agent']['PASSWORD'] == 'default' )	{?>
         <script>
         $(document).ready(function() {
-            if (window.location.href !== 'http://192.168.88.40/GPS/user/profil' && window.location.href !==
-                'http://192.168.88.40/GPS/Home') {
-                window.location.href = 'http://192.168.88.40/GPS/user/profil'
+            if (window.location.href !== 'http://192.168.88.40/CAMI/user/profil' && window.location.href !==
+                'http://192.168.88.40/CAMI/Home') {
+                window.location.href = 'http://192.168.88.40/CAMI/user/profil'
             }
         })
         </script>

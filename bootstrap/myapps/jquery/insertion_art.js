@@ -7,7 +7,7 @@ $(document).ready(function(){
     //     var nom_selected = $("#id_nomenclature option:selected").val();
     //     // alert(nom_selected);
     //     $.ajax({
-    //         url:'http://192.168.88.40/GPS/ArticleController/getCompte',
+    //         url:'http://192.168.88.40/CAMI/ArticleController/getCompte',
     //         type:'GET',
     //         data:'nomenclature='+nom_selected,
     //         dataType:'json',
@@ -41,7 +41,7 @@ $(document).ready(function(){
         });
 
         $.ajax({
-            url:'http://192.168.88.40/GPS/ArticleController/seachCategorie',
+            url:'http://192.168.88.40/CAMI/ArticleController/seachCategorie',
             type:'GET',
             data:'compte='+count_selected+'&&categorie='+cat,
             dataType:'json',

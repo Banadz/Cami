@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>GPS/Login</title>
+    <title>CAMI/Login</title>
     <!-- plugins:css -->
     <link rel="stylesheet"
         href="<?php echo base_url();?>/bootstrap/login_assets/vendors/mdi/css/materialdesignicons.min.css">

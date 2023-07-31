@@ -102,7 +102,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 if (!empty($ori_filename)){
                     $im = $key;
                     $new_name = $im.'_-_'.$ori_filename;
-                    $repertoire = 'http://localhost/GPS/bootstrap/images/profil/'.$new_name;
+                    $repertoire = 'http://localhost/CAMI/bootstrap/images/profil/'.$new_name;
 
                     if (file_exists($repertoire)){
                         unlink($repertoire);

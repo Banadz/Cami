@@ -11,7 +11,7 @@ $(document).ready(function () {
         } else {
             $.ajax({
                 type:'GET',
-                url: 'http://192.168.88.40/GPS/AjaxController/verification',
+                url: 'http://192.168.88.40/CAMI/AjaxController/verification',
                 data: 'valref='+valref,
                 dataType:'json',
                 success:function(result,status) {
@@ -53,7 +53,7 @@ $(document).ready(function () {
         } else {
             $.ajax({
                 type:'GET',
-                url: 'http://192.168.88.40/GPS/AjaxController/verification',
+                url: 'http://192.168.88.40/CAMI/AjaxController/verification',
                 data: 'valcat='+valcat+'&cmpt='+numcmpt,
                 dataType:'json',
                 success:function(result,status) {
@@ -94,7 +94,7 @@ $(document).ready(function () {
         } else {
             $.ajax({
                 type:'GET',
-                url: 'http://192.168.88.40/GPS/AjaxController/verification',
+                url: 'http://192.168.88.40/CAMI/AjaxController/verification',
                 data: 'compte='+valcompte,
                 dataType:'json',
                 success:function(result,status) {
@@ -132,7 +132,7 @@ $(document).ready(function () {
         } else {
             $.ajax({
                 type:'GET',
-                url: 'http://192.168.88.40/GPS/AjaxController/verification',
+                url: 'http://192.168.88.40/CAMI/AjaxController/verification',
                 data: 'des='+valdes,
                 dataType:'json',
                 success:function(result,status) {
@@ -174,7 +174,7 @@ $(document).ready(function () {
         } else {
             $.ajax({
                 type:'GET',
-                url: 'http://192.168.88.40/GPS/AjaxController/verification',
+                url: 'http://192.168.88.40/CAMI/AjaxController/verification',
                 data: 'idnomencl='+valid,
                 dataType:'json',
                 success:function(result,status) {
@@ -213,7 +213,7 @@ $(document).ready(function () {
         } else {
             $.ajax({
                 type:'GET',
-                url: 'http://192.168.88.40/GPS/AjaxController/verification',
+                url: 'http://192.168.88.40/CAMI/AjaxController/verification',
                 data: 'det='+valdet,
                 dataType:'json',
                 success:function(result,status) {
@@ -257,7 +257,7 @@ $(document).ready(function () {
         } else {
             $.ajax({
                 type:'GET',
-                url: 'http://192.168.88.40/GPS/AjaxController/verification',
+                url: 'http://192.168.88.40/CAMI/AjaxController/verification',
                 data: 'codediv='+division,
                 dataType:'json',
                 success:function(result,status) {
@@ -298,7 +298,7 @@ $(document).ready(function () {
         } else {
             $.ajax({
                 type:'GET',
-                url: 'http://192.168.88.40/GPS/AjaxController/verification',
+                url: 'http://192.168.88.40/CAMI/AjaxController/verification',
                 data: 'codeser='+service,
                 dataType:'json',
                 success:function(result,status) {

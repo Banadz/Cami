@@ -3,12 +3,12 @@ $(document).ready(function(){
     $('.labelprof').each(function(){
         $(this).remove();
     });
-    $('#idavatarprof').attr('src', 'http://192.168.88.40/GPS/bootstrap/images/profil/user.png');
+    $('#idavatarprof').attr('src', 'http://192.168.88.40/CAMI/bootstrap/images/profil/user.png');
     $('#idavatarprof').attr('width', '100');
     ima = $('#hideIdprof').attr('value');
     $('#hideIdprof').hide();
     $.ajax({
-        url: 'http://192.168.88.40/GPS/User/getUser',
+        url: 'http://192.168.88.40/CAMI/User/getUser',
         type:'GET',
         data: "im="+ima,
         dataType:'json',
@@ -20,7 +20,7 @@ $(document).ready(function(){
                 $('#hideId').hide();
                 $('#hideTypeprof').hide();
                 if (reponse.user[0]['PHOTO']){
-                    $('#idavatarprof').attr('src', 'http://192.168.88.40/GPS/bootstrap/images/profil/'+reponse.user[0]['PHOTO']);
+                    $('#idavatarprof').attr('src', 'http://192.168.88.40/CAMI/bootstrap/images/profil/'+reponse.user[0]['PHOTO']);
                     $('#idavatarprof').attr('width', '150');
                 }
                 $('#idxnomprof').append('<label class="labelprof" >'+reponse.user[0]['NOM_AG']+'</label>');
@@ -85,7 +85,7 @@ $(document).ready(function(){
             }).then((Delete) => {
                 if (Delete) {
                     $.ajax({
-                        url: 'http://192.168.88.40/GPS/User/changePass',
+                        url: 'http://192.168.88.40/CAMI/User/changePass',
                         type:'GET',
                         data: 'newpass='+newpass+'&&ima='+ima,
                         dataType:'json',
@@ -95,7 +95,7 @@ $(document).ready(function(){
                                     buttons: false,
                                     timer: 3000,
                                 });
-                                window.location.href = 'http://192.168.88.40/GPS/HomeController/disconnect';
+                                window.location.href = 'http://192.168.88.40/CAMI/HomeController/disconnect';
                                     
                             }else{
                                 swal("Erreur", "Une erreur, lors du transfert de donnés", {
@@ -149,7 +149,7 @@ $(document).ready(function(){
             }).then((Delete) => {
                 if (Delete) {
                     $.ajax({
-                        url: 'http://192.168.88.40/GPS/User/changePass',
+                        url: 'http://192.168.88.40/CAMI/User/changePass',
                         type:'GET',
                         data: 'newpass='+newpass+'&&ima='+ima,
                         dataType:'json',
@@ -159,7 +159,7 @@ $(document).ready(function(){
                                     buttons: false,
                                     timer: 3000,
                                 });
-                                window.location.href = 'http://192.168.88.40/GPS/HomeController/disconnect';
+                                window.location.href = 'http://192.168.88.40/CAMI/HomeController/disconnect';
                                     
                             }else{
                                 swal("Erreur", "Une erreur, lors du transfert de donnés", {
@@ -211,7 +211,7 @@ $(document).ready(function(){
                 ima = $('#hideIdprof').attr('value');
                 oldpass = $('#oldpass').val();
                 $.ajax({
-                    url: 'http://192.168.88.40/GPS/User/passControl',
+                    url: 'http://192.168.88.40/CAMI/User/passControl',
                     type:'GET',
                     data: 'oldpass='+oldpass+'&&ima='+ima,
                     dataType:'json',
@@ -312,7 +312,7 @@ $(document).ready(function(){
 
     let agentLogged = ''
     $.ajax({
-        url: 'http://192.168.88.40/GPS/HomeController/salutation',
+        url: 'http://192.168.88.40/CAMI/HomeController/salutation',
         dataType:'json',
         success: function(reponse, status){
             if (reponse.success){
@@ -352,7 +352,7 @@ $(document).ready(function(){
                         ima = $('#hideIdprof').attr('value');
                         oldpass = $('#oldpass').val();
                         $.ajax({
-                            url: 'http://192.168.88.40/GPS/User/passControl',
+                            url: 'http://192.168.88.40/CAMI/User/passControl',
                             type:'GET',
                             data: 'oldpass='+oldpass+'&&ima='+ima,
                             dataType:'json',

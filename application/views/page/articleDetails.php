@@ -141,7 +141,7 @@
                         <ul class="nav">
                             <li class="nav-item">
 
-                                GPS
+                                CAMI
 
                             </li>
 

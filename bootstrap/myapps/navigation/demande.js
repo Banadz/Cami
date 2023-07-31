@@ -70,7 +70,7 @@ $(document).ready(function(){
                     num= $(this).closest('tr').attr('id')
                     
                     $.ajax({
-                        url: 'http://192.168.88.40/GPS/DemandeController/Recevoir',
+                        url: 'http://192.168.88.40/CAMI/DemandeController/Recevoir',
                         type:'GET',
                         data: 'num='+num,
                         dataType:'json',
@@ -148,7 +148,7 @@ $(document).ready(function(){
             }).then((Delete) => {
                 if (Delete) {
                     $.ajax({
-                        url: 'http://192.168.88.40/GPS/DemandeController/validation',
+                        url: 'http://192.168.88.40/CAMI/DemandeController/validation',
                         type:'GET',
                         data: 'num='+num+'&&qte='+qte,
                         dataType:'json',
@@ -184,7 +184,7 @@ $(document).ready(function(){
                                         if (Delete) {
                                             // alert("ato");
                                             $.ajax({
-                                                url: 'http://192.168.88.40/GPS/DemandeController/acceptWarning',
+                                                url: 'http://192.168.88.40/CAMI/DemandeController/acceptWarning',
                                                 type:'GET',
                                                 data: 'num='+reponse.info[0].num+'&&inputQte='+reponse.info[0].inputQte+'&&formule='+reponse.info[0].formule,
                                                 dataType:'json',
@@ -202,7 +202,7 @@ $(document).ready(function(){
                                                             },
                                                         }).then((Delete) => {
                                                             if (Delete) {     
-                                                                window.location.href = 'http://192.168.88.40/GPS/demande';
+                                                                window.location.href = 'http://192.168.88.40/CAMI/demande';
                                                             }
             
                                                         });
@@ -267,7 +267,7 @@ $(document).ready(function(){
                     }).then((Delete) => {
                         if (Delete) {
                             $.ajax({
-                                url: 'http://192.168.88.40/GPS/DemandeController/refuse',
+                                url: 'http://192.168.88.40/CAMI/DemandeController/refuse',
                                 type:'GET',
                                 data: 'num='+id,
                                 dataType:'json',

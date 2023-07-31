@@ -21,7 +21,7 @@ $(document).ready(function () {
         } else {
             var val = $(this).val().toLowerCase();
             $.ajax({
-                url:'http://192.168.88.40/GPS/AjaxController/detenteur',
+                url:'http://192.168.88.40/CAMI/AjaxController/detenteur',
                 type:'POST',
                 data: {val: val},
                 dataType:'json',
@@ -40,7 +40,7 @@ $(document).ready(function () {
                                     $('#detenteur').blur(function () {
                                         var selecval = $('#detenteur option:selected').val();
                                         $.ajax({
-                                            url:'http://192.168.88.40/GPS/AjaxController/getdet',
+                                            url:'http://192.168.88.40/CAMI/AjaxController/getdet',
                                             type:'POST',
                                             data: {matr:selecval},
                                             dataType:'json',
@@ -59,7 +59,7 @@ $(document).ready(function () {
                                     $('#detenteur').change(function () {
                                         var selecval = $('#detenteur option:selected').val();
                                         $.ajax({
-                                            url:'http://192.168.88.40/GPS/AjaxController/getdet',
+                                            url:'http://192.168.88.40/CAMI/AjaxController/getdet',
                                             type:'POST',
                                             data: {matr:selecval},
                                             dataType:'json',
@@ -116,7 +116,7 @@ $(document).ready(function () {
         } else {
             var val = $(this).val().toLowerCase();
             $.ajax({
-                url:'http://192.168.88.40/GPS/AjaxController/detenteur',
+                url:'http://192.168.88.40/CAMI/AjaxController/detenteur',
                 type:'POST',
                 data: {val: val},
                 dataType:'json',
@@ -135,7 +135,7 @@ $(document).ready(function () {
                                     $('#det').blur(function () {
                                         var selecval = $('#det option:selected').val();
                                         $.ajax({
-                                            url:'http://192.168.88.40/GPS/AjaxController/getdet',
+                                            url:'http://192.168.88.40/CAMI/AjaxController/getdet',
                                             type:'POST',
                                             data: {matr:selecval},
                                             dataType:'json',
@@ -154,7 +154,7 @@ $(document).ready(function () {
                                     $('#det').change(function () {
                                         var selecval = $('#det option:selected').val();
                                         $.ajax({
-                                            url:'http://192.168.88.40/GPS/AjaxController/getdet',
+                                            url:'http://192.168.88.40/CAMI/AjaxController/getdet',
                                             type:'POST',
                                             data: {matr:selecval},
                                             dataType:'json',
@@ -259,7 +259,7 @@ $(document).ready(function () {
             e.preventDefault();
             var insertcompte = $('.insertcompte'), compteselec = $('.comptehide').attr('value');
             $.ajax({
-                url:'http://192.168.88.40/GPS/GetController/Categorie',
+                url:'http://192.168.88.40/CAMI/GetController/Categorie',
                 type:'GET',
                 data:'compte='+compteselec,
                 dataType:'json',
@@ -407,7 +407,7 @@ $(document).ready(function () {
             $('#header').append('<h2 class="modal-title" id="title">Modification matériel : '+ refmat +'</h2>');
 
             $.ajax({
-                url:'http://192.168.88.40/GPS/AjaxController/materielmodifie',
+                url:'http://192.168.88.40/CAMI/AjaxController/materielmodifie',
                 type:'GET',
                 data:'referencemate='+refmat,
                 dataType:'json',
@@ -507,7 +507,7 @@ $(document).ready(function () {
             $('#header1').append('<h2 class="modal-title" id="title1">Modification matériel : '+ refmats +'</h2>');
 
             $.ajax({
-                url:'http://192.168.88.40/GPS/AjaxController/materielmodifie',
+                url:'http://192.168.88.40/CAMI/AjaxController/materielmodifie',
                 type:'GET',
                 data:'referencemate='+refmats,
                 dataType:'json',
@@ -691,7 +691,7 @@ $(document).ready(function () {
                 });
 
                 $.ajax({
-                    url:'http://192.168.88.40/GPS/AjaxController/getdivision',
+                    url:'http://192.168.88.40/CAMI/AjaxController/getdivision',
                     type:'GET',
                     data:'matricule='+matricule,
                     dataType:'json',
@@ -763,7 +763,7 @@ $(document).ready(function () {
                     });
 
                     $.ajax({
-                        url:'http://192.168.88.40/GPS/AjaxController/getdivision',
+                        url:'http://192.168.88.40/CAMI/AjaxController/getdivision',
                         type:'GET',
                         data:'matricule='+agmatr,
                         dataType:'json',
@@ -878,7 +878,7 @@ $(document).ready(function () {
             $('#headmatinfo').append('<h2 class="modal-title" id="matinfotitle">Matériel : '+ matrefinfo+' - '+ specmatinfo +'</h2>');
             
             $.ajax({
-                url:'http://192.168.88.40/GPS/AjaxController/sortaseho',
+                url:'http://192.168.88.40/CAMI/AjaxController/sortaseho',
                 type:'GET',
                 data:'refmat='+matrefinfo,
                 dataType:'json',
@@ -961,7 +961,7 @@ $(document).ready(function () {
             }
         }).then((Delete) => {
             if (Delete) {
-                window.location.href = "http://192.168.88.40/GPS/HomeController/disconnect";
+                window.location.href = "http://192.168.88.40/CAMI/HomeController/disconnect";
             } else {
                 swal.close();
             }

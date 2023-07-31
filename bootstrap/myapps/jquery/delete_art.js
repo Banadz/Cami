@@ -24,7 +24,7 @@ $(document).ready(function(){
                 }).then((Delete) => {
                     if (Delete) {
                         $.ajax({
-                            url: 'http://192.168.88.40/GPS/ArticleController/suppression',
+                            url: 'http://192.168.88.40/CAMI/ArticleController/suppression',
                             type:'GET',
                             data: 'formule='+id,
                             dataType:'json',

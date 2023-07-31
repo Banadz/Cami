@@ -31,7 +31,7 @@ $(document).ready(function(){
         $(this).on('click', function(){
             let categorie = $('.zoneCategorie').attr('id');
             $.ajax({
-                url:'http://192.168.88.40/GPS/article/getDesignation',
+                url:'http://192.168.88.40/CAMI/article/getDesignation',
                 type:'GET',
                 data:'compte='+categorie,
                 dataType:'json',
@@ -166,7 +166,7 @@ $(document).ready(function(){
                 }
             }else{
                 $.ajax({
-                    url:'http://192.168.88.40/GPS/QteDemande/control',
+                    url:'http://192.168.88.40/CAMI/QteDemande/control',
                     method:'POST',
                     data:{formule:formu, qDem:quantit},
                     dataType:'json',
@@ -276,7 +276,7 @@ $(document).ready(function(){
                 formu = laligne[0]
                 quantit = $('#up_DemQuant').val()
                 $.ajax({
-                    url:'http://192.168.88.40/GPS/QteDemande/control',
+                    url:'http://192.168.88.40/CAMI/QteDemande/control',
                     method:'POST',
                     data:{formule:formu, qDem:quantit},
                     dataType:'json',
@@ -338,7 +338,7 @@ $(document).ready(function(){
         let big_data = Donnetable.data().toArray()
         console.log(big_data)
         $.ajax({
-            url:'http://192.168.88.40/GPS/demande/insertion',
+            url:'http://192.168.88.40/CAMI/demande/insertion',
             method:'POST',
             data:{big_data:big_data},
             dataType:'json',

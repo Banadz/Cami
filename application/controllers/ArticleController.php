@@ -155,9 +155,11 @@ class ArticleController extends CI_Controller
             TO_CHAR(DEMANDE.FORMULE),
             TO_CHAR(DEMANDE.MATRICULE)AS MATRI 
             FROM DEMANDE 
-            WHERE DEMANDE.FORMULE='$formule' AND DEMANDE.ETAT_DEMANDE = 'Validé' OR DEMANDE.ETAT_DEMANDE = 'Livré' AND
+            WHERE DEMANDE.FORMULE='$formule' AND DEMANDE.ETAT_DEMANDE = 'Validé' AND
+            TO_DATE(DEMANDE.DATE_CONFIRM,'YYYY-MM-DD') BETWEEN TO_DATE('$debut','YYYY-MM-DD') AND TO_DATE('$fin','YYYY-MM-DD')
+            OR DEMANDE.FORMULE='$formule' AND DEMANDE.ETAT_DEMANDE = 'Livré' AND
             TO_DATE(DEMANDE.DATE_CONFIRM,'YYYY-MM-DD') BETWEEN TO_DATE('$debut','YYYY-MM-DD') AND TO_DATE('$fin','YYYY-MM-DD') 
-            ORDER BY LERA ASC");
+            ORDER BY LERA DESC");
         }else{
             $debut = 'Début';
             $fin = date('d-m-Y');
@@ -184,8 +186,8 @@ class ArticleController extends CI_Controller
             TO_CHAR(DEMANDE.FORMULE),
             TO_CHAR(DEMANDE.MATRICULE)AS MATRI 
             FROM DEMANDE 
-            WHERE DEMANDE.FORMULE='$formule' AND DEMANDE.ETAT_DEMANDE = 'Validé' OR DEMANDE.ETAT_DEMANDE = 'Livré'
-            ORDER BY LERA ASC");
+            WHERE DEMANDE.FORMULE='$formule' AND DEMANDE.ETAT_DEMANDE = 'Validé' OR DEMANDE.FORMULE='$formule' AND DEMANDE.ETAT_DEMANDE = 'Livré'
+            ORDER BY LERA DESC");
         }
         
         
