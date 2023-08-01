@@ -166,8 +166,8 @@
                             <!-- <th class="headbordure" style= "width=30%;">Compte</th>
                             <th class="headbordure" style= "width=25%;">Catégorie</th> -->
                             <th class="headbordure" style="width=80%;">Désignation</th>
-                            <th class="headbordure" style="width=18%;">STOCK</th>
                             <th class="headbordure" style="width=18%;">Unité</th>
+                            <th class="headbordure" style="width=18%;">STOCK</th>
                             <th class="headbordure" style="width=20%;">Quantité demandé</th>
                             <th class="headbordure" style="width=20%;">Quantité accordé</th>
                             <th class="headbordure" style="width=20%;">Quantité livré</th>
@@ -186,9 +186,9 @@
                                 <?=($packet['ART']['0']['DESIGNATION_ART']); ?>
                                 <?=($packet['ART']['0']['SPECIFICITE_ART']); ?></td>
                             <td class="cellbordure" style="width=18%;" style="text-align:center;">
-                                <?=($packet['ART']['0']['EFFECTIF_ART']); ?></td>
-                            <td class="cellbordure" style="width=18%;" style="text-align:center;">
                                 <?=($packet['DEM']['0']['UNITE']); ?></td>
+                            <td class="cellbordure" style="width=18%;" style="text-align:center;">
+                                <?=($packet['ART']['0']['EFFECTIF_ART']); ?></td>
                             <td class="cellbordure" style="width=25%;" style="text-align:center;">
                                 <?=($packet['DEM']['0']['QUANTITE']); ?></td>
                             <td class="cellbordure" style="width=20%;" style="text-align:center;"></td>
