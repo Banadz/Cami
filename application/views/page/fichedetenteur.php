@@ -270,17 +270,17 @@ function convert_number_to_words($number) {
 
 
 <?php 
-    ob_end_flush ();
-    $content = ob_get_clean();
+ob_end_flush ();
+$content = ob_get_clean();
 
-    require('html2pdf/html2pdf.class.php');
-    try{
-        $pdf = new HTML2PDF('P', 'A4', 'fr', true, 'UTF-8', array(10, 10, 10, 10));
-        $pdf->writeHTML($content);
-        $pdf->Output('Fiche detenteur.pdf');
-    }catch(HTML2PDF_exception $e){
-        die($e);
-    }
+require('html2pdf/html2pdf.class.php');
+try{
+    $pdf = new HTML2PDF('L', 'A4', 'fr', true, 'UTF-8', array(10, 10, 10, 10));
+    $pdf->writeHTML($content);
+    $pdf->Output('Fiche detenteur.pdf');
+}catch(HTML2PDF_exception $e){
+    die($e);
+}
 ?>
 
 </html>
