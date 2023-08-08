@@ -54,8 +54,8 @@ $(document).ready(function(){
                                     option,
                                 ]);
                             });
-                            $('.chooseCatego').each(function(){
-                                $(this).on('click',function(){
+                            $('body').on('click', '.chooseCatego', function(){//$('.chooseCatego').each(function(){
+                                // $(this).on('click',function(){
                                     $tr = $(this).closest('tr');
                                     var cati =  $tr.children("td").map(function(){
                                         return $(this).text();
@@ -65,7 +65,7 @@ $(document).ready(function(){
                                         $(this).attr('value', cati[1].trim())
                                         $(this).attr('id', cati[0].trim())
                                     })
-                                })
+                                // })
                             })
                             $('#add_form2').on('submit', function(e){
                                 e.preventDefault();

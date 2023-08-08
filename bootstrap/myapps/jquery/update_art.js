@@ -71,7 +71,6 @@ $(document).ready(function(){
                                         if (Delete) {     
                                             window.location.reload();
                                         }
-
                                     });
 
                                 }

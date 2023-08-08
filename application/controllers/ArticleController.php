@@ -486,7 +486,7 @@ class ArticleController extends CI_Controller
             
             $dem = $demande->row_array();
 
-            if($dem['FORMULE']){
+            if(isset($dem['FORMULE']) && $dem['FORMULE']){
                 $this->db->set('DISPONIBILITE_ART', 'non dispo');
                 $this->db->where('FORMULE', $formule);
                 $this->db->update('ARTICLE');
@@ -495,17 +495,29 @@ class ArticleController extends CI_Controller
                 $this->db->where('FORMULE', $formule);
                 $this->db->delete('ARTICLE');
             }
+            $this->session->set_flashdata("operation_rapport", "L'article N° $formule est supprimé");
+            if ($this->isAjax()){
+                $reponse = array(
+                    'success'=>$_SESSION['operation_rapport']
+                );
+                
+                echo json_encode($reponse);
+            }else{    
+                redirect(base_url('article/data'), "Refresh");
+            }
+        }else{
+            $this->session->set_flashdata("operation_rapport", "Erreur de transfert de données");
+            if ($this->isAjax()){
+                $reponse = array(
+                    'error'=>$_SESSION['operation_rapport']
+                );
+                
+                echo json_encode($reponse);
+            }else{    
+                redirect(base_url('article/data'), "Refresh");
+            }
         }
-        $this->session->set_flashdata("operation_rapport", "L'article N° $formule est supprimé");
-        if ($this->isAjax()){
-            $reponse = array(
-                'success'=>$_SESSION['operation_rapport']
-            );
-            
-            echo json_encode($reponse);
-        }else{    
-            redirect(base_url('article/data'), "Refresh");
-        }
+        
         // $this->page_dataArticle();
     }
 
