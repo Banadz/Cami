@@ -722,9 +722,22 @@
                                                                                     </button>
                                                                                 </div>
                                                                                 <?php  }else{  ?>
+
+                                                                                <?php  if($_SESSION['agent']['TYPE_AG'] === 'Admin' && $request['MATRICULE'] === $_SESSION['agent']['MATRICULE'] ){  ?>
+                                                                                <div class="form-button-action">
+
+                                                                                    <button title="Réçu"
+                                                                                        data-toggle="tooltip"
+                                                                                        class="btn btn-icon btn-round btn-primary toreceive"
+                                                                                        data-original-title="Edit Task">
+                                                                                        <i class="fas fa-receipt"></i>
+                                                                                    </button>
+                                                                                </div>
+                                                                                <?php   }else{ ?>
                                                                                 <h6 class="font-weight-bold">
                                                                                     En attente de livraison
                                                                                 </h6>
+                                                                                <?php   } ?>
                                                                                 <?php   } ?>
                                                                             </td>
                                                                         </tr>
