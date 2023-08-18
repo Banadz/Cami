@@ -657,16 +657,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $idorig = $resulat1['ID_ORIGINE'];
 
             $this->db->query("INSERT INTO MATERIEL(REF_MAT,DESIGN_MAT,SPEC_MAT,ETAT_MAT,ID_NOM,NUM_CMPT,ID_CAT,ID_ORIGINE,SORTIE,CODE_SER) VALUES(
-            '$ref_mat',
-            '$design_mat',
-            '$spec_mat',
-            '$etat_mat',
-            '$id_nom',
-            '$id_cmpt',
-            '$id_cat',
-            '$idorig',
+            q'[$ref_mat]',
+            q'[$design_mat]',
+            q'[$spec_mat]',
+            q'[$etat_mat]',
+            q'[$id_nom]',
+            q'[$id_cmpt]',
+            q'[$id_cat]',
+            q'[$idorig]',
             NULL,
-            '$ser'
+            q'[$ser]'
             )");
             
             $this->session->set_flashdata("materiel", "Un nouveau matériel entré");
