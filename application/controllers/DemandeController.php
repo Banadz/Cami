@@ -370,7 +370,7 @@ class DemandeController extends CI_Controller
     public function printDemande(){
         
         $this->load->model('DemandeModel');
-        $big_data['big_data'] = json_decode($_GET['big_data'],true);
+        // $big_data['big_data'] = json_decode($_GET['big_data'],true);
         $listNum = json_decode($_GET['listNum'],true);
         $packetDemande = array();
         foreach ($listNum as $num){

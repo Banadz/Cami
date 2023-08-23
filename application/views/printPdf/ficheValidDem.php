@@ -100,7 +100,7 @@
 
         .foot {
             position: absolute;
-            margin-top: 750px;
+            margin-top: 780px;
         }
 
         .footer {
