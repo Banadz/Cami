@@ -130,6 +130,12 @@
             justify-content: center;
             align-items: center;
         }
+
+        .datinandro {
+            position: absolute;
+            margin-left: 495px;
+            margin-top: 132px;
+        }
         </style>
         <div>
             <div class="row header">
@@ -145,6 +151,19 @@
                         <?=($_SESSION['agent_ser'][0]['ENTETE4']);?><br>
                         <?=($_SESSION['agent_ser'][0]['ENTETE5']);?>
                     </p>
+                </div>
+                <?php 
+                    $packDemande = array_filter($packetsDemande);
+                    $date_parts = explode('/', $packDemande['0']['DEM']['0']['DATE_DEMANDE']);
+                    $mois = array(1 => 'Janvier', 2 => 'Février',3 => 'Mars',4 => 'Avril',5 => 'Mai',6 => 'Juin',7 => 'Juillet',8 => 'Août',9 => 'Septembre',10 => 'Octobre',11 => 'Novembre',12 => 'Décembre'
+                    );
+                    $formatted_date = $date_parts[0] . ' ' . $mois[(int)$date_parts[1]] . ' 20' . $date_parts[2];
+
+                    // $formatted_date = date('d F Y', strtotime($timestamp)); 
+                ?>
+                <div class="datinandro">
+                    <?=($_SESSION['agent_ser'][0]['VILLE']);?>, le
+                    <?=($formatted_date); ?>.
                 </div>
             </div>
             <div class="row Heading">
