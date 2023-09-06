@@ -277,7 +277,7 @@ class DemandeController extends CI_Controller
         if(!empty($_GET)){
             $num = strip_tags($_GET['num']);
             $this->load->model('DemandeModel');
-            // $this->DemandeModel->receiveArticleDem($num);
+            $this->DemandeModel->receiveArticleDem($num);
             $this->session->set_flashdata("valide_rapport", "L'objet de la demande est  livré. ( Réf: N° $num) ");
             if ($this->isAjax()){
                 $reponse = array(

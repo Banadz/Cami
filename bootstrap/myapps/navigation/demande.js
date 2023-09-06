@@ -2,6 +2,7 @@ $(document).ready(function () {
 	let information;
 	let complet = "";
 	let tableLivring = $("#tableLivring").DataTable();
+	let tableLivred = $("#tableLivred").DataTable();
 
 	$(".tovalide").each(function () {
 		$(this).on("click", function (kalma) {
@@ -130,8 +131,23 @@ $(document).ready(function () {
 							}).then((Delete) => {
 								if (Delete) {
 									var row = $clickedButton.closest("tr");
+									var rowData = tableLivring.row(row).data();
 									var rowObj = tableLivring.row(row);
 									rowObj.remove().draw(false);
+									$("#tableLivred").dataTable().fnAddData([
+										rowData[0],
+										rowData[1],
+										rowData[2],
+										rowData[3],
+										rowData[4],
+										rowData[5],
+										rowData[6],
+										rowData[7],
+										rowData[8],
+										"Livré", // État
+									]);
+
+									// $newTr.appendTo("#tableLivred tbody");
 								}
 							});
 						}
