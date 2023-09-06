@@ -478,13 +478,14 @@
                                                                     class="display table table-striped table-hover">
                                                                     <thead>
                                                                         <tr>
+                                                                            <th>Référence</th>
+                                                                            <th>Date de la demande</th>
                                                                             <th>Matricule</th>
                                                                             <th>Nom</th>
                                                                             <th>Division</th>
                                                                             <th>Article</th>
                                                                             <th>Quantité</th>
                                                                             <th>Unité</th>
-                                                                            <th>Date</th>
                                                                             <th>Etat</th>
                                                                         </tr>
                                                                     </thead>
@@ -494,14 +495,17 @@
                                                                         // if()
                                                                     ?>
                                                                         <tr id="<?=($request['NUMEROTATION']);?>">
-                                                                            <td><?=($request['MATRICULE']);?></td>
-                                                                            <td><?=($request['NOM_UTIL_AG']);?></td>
+                                                                            <td><?=($request['NUMEROTATION']);?></td>
+                                                                            <td><?=($request['DATE_DEMANDE']);?></td>
+                                                                            <td title="<?=($request['PRENOM_AG']);?>">
+                                                                                <?=($request['MATRICULE']);?></td>
+                                                                            <td title="<?=($request['PRENOM_AG']);?>">
+                                                                                <?=($request['NOM_UTIL_AG']);?></td>
                                                                             <td><?=($request['CODE_DIVISION']);?></td>
                                                                             <td><?=($request['DESIGNATION_ART']);?>
                                                                                 <?=($request['SPECIFICITE_ART']);?></td>
                                                                             <td><?=($request['QUANTITE']);?></td>
                                                                             <td><?=($request['UNITE']);?></td>
-                                                                            <td><?=($request['DATE_DEMANDE']);?></td>
 
                                                                             <td>
                                                                                 <?php  if($_SESSION['agent']['TYPE_AG'] != 'USER' ){ ?>
@@ -584,6 +588,8 @@
                                                                     class="display table table-striped table-hover">
                                                                     <thead>
                                                                         <tr>
+                                                                            <th>Référence</th>
+                                                                            <th>Date de demande</th>
                                                                             <th>Matricule</th>
                                                                             <th>Nom</th>
                                                                             <th>Division</th>
@@ -600,8 +606,12 @@
                                                                     // if()
                                                                 ?>
                                                                         <tr id="<?=($request['NUMEROTATION']);?>">
-                                                                            <td><?=($request['MATRICULE']);?></td>
-                                                                            <td><?=($request['NOM_UTIL_AG']);?></td>
+                                                                            <td><?=($request['NUMEROTATION']);?></td>
+                                                                            <td><?=($request['DATE_DEMANDE']);?></td>
+                                                                            <td title="<?=($request['PRENOM_AG']);?>">
+                                                                                <?=($request['MATRICULE']);?></td>
+                                                                            <td title="<?=($request['PRENOM_AG']);?>">
+                                                                                <?=($request['NOM_UTIL_AG']);?></td>
                                                                             <td><?=($request['LABEL_DIVISION']);?></td>
                                                                             <td><?=($request['DESIGNATION_ART']);?>
                                                                                 <?=($request['SPECIFICITE_ART']);?></td>
@@ -682,6 +692,8 @@
                                                                     class="display table table-striped table-hover">
                                                                     <thead>
                                                                         <tr>
+                                                                            <th>Référence</th>
+                                                                            <th>Date de demande</th>
                                                                             <th>Matricule</th>
                                                                             <th>Nom</th>
                                                                             <th>Division</th>
@@ -698,8 +710,12 @@
                                                                     // if()
                                                                 ?>
                                                                         <tr id="<?=($request['NUMEROTATION']);?>">
-                                                                            <td><?=($request['MATRICULE']);?></td>
-                                                                            <td><?=($request['NOM_UTIL_AG']);?></td>
+                                                                            <td><?=($request['NUMEROTATION']);?></td>
+                                                                            <td><?=($request['DATE_DEMANDE']);?></td>
+                                                                            <td title="<?=($request['PRENOM_AG']);?>">
+                                                                                <?=($request['MATRICULE']);?></td>
+                                                                            <td title="<?=($request['PRENOM_AG']);?>">
+                                                                                <?=($request['NOM_UTIL_AG']);?></td>
                                                                             <td><?=($request['CODE_DIVISION']);?></td>
                                                                             <td><?=($request['DESIGNATION_ART']);?>
                                                                                 <?=($request['SPECIFICITE_ART']);?></td>
@@ -766,13 +782,15 @@
                                                                     class="display table table-striped table-hover">
                                                                     <thead>
                                                                         <tr>
+                                                                            <th>Référence</th>
+                                                                            <th>Date de demande</th>
                                                                             <th>Matricule</th>
                                                                             <th>Nom</th>
                                                                             <th>Division</th>
                                                                             <th>Article</th>
                                                                             <th>Quantité</th>
                                                                             <th>Unité</th>
-                                                                            <th>Date de la livraison</th>
+                                                                            <th>Date de validation</th>
                                                                             <th>Etat</th>
                                                                         </tr>
                                                                     </thead>
@@ -782,14 +800,18 @@
                                                                     // if()
                                                                 ?>
                                                                         <tr id="<?=($request['NUMEROTATION']);?>">
-                                                                            <td><?=($request['MATRICULE']);?></td>
-                                                                            <td><?=($request['NOM_UTIL_AG']);?></td>
+                                                                            <td><?=($request['NUMEROTATION']);?></td>
+                                                                            <td><?=($request['DATE_DEMANDE']);?></td>
+                                                                            <td title="<?=($request['PRENOM_AG']);?>">
+                                                                                <?=($request['MATRICULE']);?></td>
+                                                                            <td title="<?=($request['PRENOM_AG']);?>">
+                                                                                <?=($request['NOM_UTIL_AG']);?></td>
                                                                             <td><?=($request['CODE_DIVISION']);?></td>
                                                                             <td><?=($request['DESIGNATION_ART']);?>
                                                                                 <?=($request['SPECIFICITE_ART']);?></td>
                                                                             <td><?=($request['QUANTITE_ACC']);?></td>
                                                                             <td><?=($request['UNITE']);?></td>
-                                                                            <td><?=($request['DATE_DEMANDE']);?></td>
+                                                                            <td><?=($request['DATE_CONFIRM']);?></td>
 
                                                                             <td>
                                                                                 <?php  if($_SESSION['agent']['TYPE_AG'] != 'USER' ){ ?>

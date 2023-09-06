@@ -53,10 +53,6 @@ $(document).ready(function() {
         "pageLength": 5,
     });
 
-    $('#add-row4').DataTable({
-        "pageLength": 5,
-    });
-
     $('#add-row5').DataTable({
         "pageLength": 5,
     });

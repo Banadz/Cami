@@ -39,7 +39,7 @@ $(document).ready(function () {
 			$.ajax({
 				url: "http://192.168.88.40/CAMI/article/getDesignation",
 				type: "GET",
-				data: "compte=" + categorie,
+				data: "compte=" + categorie.trim(),
 				dataType: "json",
 				success: function (resultat, status) {
 					if (resultat.success) {
