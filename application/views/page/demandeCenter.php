@@ -688,7 +688,7 @@
                                                         <div class="card-body">
 
                                                             <div class="table-responsive">
-                                                                <table id="add-row4"
+                                                                <table id="tableLivring"
                                                                     class="display table table-striped table-hover">
                                                                     <thead>
                                                                         <tr>
@@ -982,6 +982,9 @@ $(document).ready(function() {
     })
 });
         </script>
+
+        <!-- Datatables -->
+        <script src="<?php echo base_url()?>/bootstrap/assets/js/plugin/datatables/datatables.min.js"></script>
         <!-- selection -->
         <script src="<?php echo base_url('bootstrap/myapps/navigation/newDemande.js');?>"></script>
         <script src="<?php echo base_url('bootstrap/myapps/navigation/demande.js');?>"></script>

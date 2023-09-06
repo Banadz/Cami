@@ -1,7 +1,7 @@
 $(document).ready(function () {
 	let information;
 	let complet = "";
-	let tableLivring = $("#add-row4").dataTable();
+	let tableLivring = $("#tableLivring").DataTable();
 
 	$(".tovalide").each(function () {
 		$(this).on("click", function (kalma) {
@@ -69,70 +69,79 @@ $(document).ready(function () {
 		});
 	});
 
-	$(".toreceive").each(function () {
-		$(this).on("click", function () {
-			$(this).on("click", function () {
-				index = $(this).closest("tr").index();
-				$("#add-row4").row(index).remove().draw(false);
-			});
-			// swal("Attentoin", "Avez-vous vraiment réçu l'objet de la demande?", {
-			// 	icon: "warning",
-			// 	buttons: {
-			// 		confirm: {
-			// 			text: "Oui",
-			// 			className: "btn btn-warning",
-			// 		},
-			// 		cancel: {
-			// 			visible: true,
-			// 			text: "Annuler",
-			// 			className: "btn",
-			// 		},
-			// 	},
-			// }).then((Delete) => {
-			// 	if (Delete) {
-			// 		$tr = $(this).closest("tr");
-			// 		num = $(this).closest("tr").attr("id");
+	// $("#tableLivring tbody").on("click", ".toreceive", function () {
+	// 	var row = $(this).closest("tr"); // Obtenir la ligne parente du bouton cliqué
 
-			// 		$.ajax({
-			// 			url: "http://192.168.88.40/CAMI/DemandeController/Recevoir",
-			// 			type: "GET",
-			// 			data: "num=" + num.trim(),
-			// 			dataType: "json",
-			// 			success: function (reponse, status) {
-			// 				console.log(reponse);
+	// 	// Utiliser la méthode row() pour obtenir l'objet de la ligne DataTable correspondante
+	// 	var rowObj = tableLivring.row(row);
 
-			// 				if (reponse.error) {
-			// 					swal("Echéc", reponse.error, {
-			// 						icon: "error",
-			// 						buttons: {
-			// 							confirm: {
-			// 								className: "btn btn-danger",
-			// 							},
-			// 						},
-			// 					});
-			// 					console.log(reponse.error);
-			// 				}
-			// 				if (reponse.success) {
-			// 					swal("Succés", reponse.success, {
-			// 						icon: "success",
-			// 						buttons: {
-			// 							confirm: {
-			// 								className: "btn btn-success",
-			// 							},
-			// 						},
-			// 					}).then((Delete) => {
-			// 						if (Delete) {
-			// 							// window.location.reload();
-			// 						}
-			// 					});
-			// 				}
-			// 			},
-			// 		});
-			// 	} else {
-			// 		swal.close();
-			// 	}
-			// });
+	// 	// Supprimer la ligne
+	// 	rowObj.remove().draw(false);
+	// });
+
+	// $(".toreceive").each(function () {
+	$("#tableLivring tbody").on("click", ".toreceive", function () {
+		var $clickedButton = $(this);
+		swal("Attentoin", "Avez-vous vraiment réçu l'objet de la demande?", {
+			icon: "warning",
+			buttons: {
+				confirm: {
+					text: "Oui",
+					className: "btn btn-warning",
+				},
+				cancel: {
+					visible: true,
+					text: "Annuler",
+					className: "btn",
+				},
+			},
+		}).then((Delete) => {
+			if (Delete) {
+				$tr = $clickedButton.closest("tr");
+				num = $(this).closest("tr").attr("id");
+
+				$.ajax({
+					url: "http://192.168.88.40/CAMI/DemandeController/Recevoir",
+					type: "GET",
+					data: "num=" + num.trim(),
+					dataType: "json",
+					success: function (reponse, status) {
+						console.log(reponse);
+
+						if (reponse.error) {
+							swal("Echéc", reponse.error, {
+								icon: "error",
+								buttons: {
+									confirm: {
+										className: "btn btn-danger",
+									},
+								},
+							});
+							console.log(reponse.error);
+						}
+						if (reponse.success) {
+							swal("Succés", reponse.success, {
+								icon: "success",
+								buttons: {
+									confirm: {
+										className: "btn btn-success",
+									},
+								},
+							}).then((Delete) => {
+								if (Delete) {
+									var row = $clickedButton.closest("tr");
+									var rowObj = tableLivring.row(row);
+									rowObj.remove().draw(false);
+								}
+							});
+						}
+					},
+				});
+			} else {
+				swal.close();
+			}
 		});
+		// });
 	});
 
 	$("#accDemForm").on("submit", function (vona) {
