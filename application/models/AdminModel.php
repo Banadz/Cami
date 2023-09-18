@@ -124,9 +124,20 @@
                     $idcat = $line[5];
                     $dispo = 'dispo';
                     $codeser = $line[4];
+                    $prix = 0;
+                    $montant = 0;
+                    $date = date('Y-m-d');
                     $this->db->query("INSERT INTO ARTICLE(FORMULE, DESIGNATION_ART, SPECIFICITE_ART, UNITE_ART, EFFECTIF_ART, ID_CAT, DISPONIBILITE_ART, CODE_SER) 
                                         VALUES('$formule', q'[$designation]', q'[$specification]', q'[$unite]', '$effectif', '$idcat', '$dispo', q'[$codeser]')");
                     $nbr += 1;
+
+                    $this->db->query("INSERT INTO ORIGINE (ID_ORIGINE, CODE_SER, FORMULE, QUANTITE_ORG, QUANTITE_STOCK, PRIX_UNI_ORG, MONTANT_ORG, 
+                                    DATE_ORG, TIME_ORG,RECU_ORG, DESCIPTION)
+                                                        VALUES (
+                                                            '$formule','SRSPHM','$formule','$effectif', '$effectif',0,0,TO_DATE('$date','YYYY-MM-DD'),
+                                                            TO_DATE(TO_CHAR(SYSDATE,'HH24:MI:SS'),'HH24:MI:SS'),'', 'Mise en stock'
+                                                        )    
+                                                    ");
                 }
             }
             fclose($file);
