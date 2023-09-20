@@ -570,18 +570,6 @@
                                                                         <div class="row">
                                                                             <div class="col-12">
                                                                                 <div class="form-group">
-                                                                                    <label for=""
-                                                                                        id="labelQ">Quantité</label>
-                                                                                    <input type="text" type="number"
-                                                                                        id="up_quantit"
-                                                                                        name="up_quantit"
-                                                                                        class="form-control modifQuant">
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="row">
-                                                                            <div class="col-12">
-                                                                                <div class="form-group">
                                                                                     <label for="">Unité</label>
                                                                                     <input type="text" id="up_unite"
                                                                                         name="uunite"

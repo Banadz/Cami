@@ -329,13 +329,13 @@ class ArticleController extends CI_Controller
             $designation = strip_tags($_GET['udesignation']);
             $cifici = strip_tags($_GET['uspecificite']);
             $nite = strip_tags($_GET['uunite']);
-            $up_quantit = strip_tags($_GET['up_quantit']);
+            // $up_quantit = strip_tags($_GET['up_quantit']);
             $formule = strip_tags($_GET['id']);
 
             $this->db->set('DESIGNATION_ART',$designation);
             $this->db->set('SPECIFICITE_ART',$cifici);
             $this->db->set('UNITE_ART',$nite);
-            $this->db->set('EFFECTIF_ART',$up_quantit);
+            // $this->db->set('EFFECTIF_ART',$up_quantit);
             $this->db->where('FORMULE',$formule);
             $this->db->update('ARTICLE');
         

@@ -117,13 +117,13 @@
                 fgetcsv($file, 0, ',');
                 while(($line = fgetcsv($file, 0, ';')) !== false){
                     $formule = $line[0];
-                    $designation = $line[1];
-                    $specification = $line[2];
-                    $unite = $line[3];
-                    $effectif = 0;
-                    $idcat = $line[5];
+                    $designation = $line[2];
+                    $specification = $line[3];
+                    $unite = $line[4];
+                    $effectif = $line[5];
+                    $idcat = $line[1];
                     $dispo = 'dispo';
-                    $codeser = $line[4];
+                    $codeser = 'SRSPHM';
                     $prix = 0;
                     $montant = 0;
                     $date = date('Y-m-d');
@@ -134,7 +134,7 @@
                     $this->db->query("INSERT INTO ORIGINE (ID_ORIGINE, CODE_SER, FORMULE, QUANTITE_ORG, QUANTITE_STOCK, PRIX_UNI_ORG, MONTANT_ORG, 
                                     DATE_ORG, TIME_ORG,RECU_ORG, DESCIPTION)
                                                         VALUES (
-                                                            '$formule','SRSPHM','$formule','$effectif', '$effectif',0,0,TO_DATE('$date','YYYY-MM-DD'),
+                                                            '$formule','SRSPHM','$formule','$effectif', '$effectif',$prix,$montant,TO_DATE('$date','YYYY-MM-DD'),
                                                             TO_DATE(TO_CHAR(SYSDATE,'HH24:MI:SS'),'HH24:MI:SS'),'', 'Mise en stock'
                                                         )    
                                                     ");
