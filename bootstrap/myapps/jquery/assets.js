@@ -20,7 +20,7 @@ $(document).ready(function () {
 		} else {
 			var val = $(this).val().toLowerCase();
 			$.ajax({
-				url: "http://102.16.19.48:4200/CAMI/AjaxController/detenteur",
+				url: "http://192.168.88.40:8080/CAMI/AjaxController/detenteur",
 				type: "POST",
 				data: { val: val },
 				dataType: "json",
@@ -49,7 +49,7 @@ $(document).ready(function () {
 									$("#detenteur").blur(function () {
 										var selecval = $("#detenteur option:selected").val();
 										$.ajax({
-											url: "http://102.16.19.48:4200/CAMI/AjaxController/getdet",
+											url: "http://192.168.88.40:8080/CAMI/AjaxController/getdet",
 											type: "POST",
 											data: { matr: selecval },
 											dataType: "json",
@@ -74,7 +74,7 @@ $(document).ready(function () {
 									$("#detenteur").change(function () {
 										var selecval = $("#detenteur option:selected").val();
 										$.ajax({
-											url: "http://102.16.19.48:4200/CAMI/AjaxController/getdet",
+											url: "http://192.168.88.40:8080/CAMI/AjaxController/getdet",
 											type: "POST",
 											data: { matr: selecval },
 											dataType: "json",
@@ -130,7 +130,7 @@ $(document).ready(function () {
 		} else {
 			var val = $(this).val().toLowerCase();
 			$.ajax({
-				url: "http://102.16.19.48:4200/CAMI/AjaxController/detenteur",
+				url: "http://192.168.88.40:8080/CAMI/AjaxController/detenteur",
 				type: "POST",
 				data: { val: val },
 				dataType: "json",
@@ -159,7 +159,7 @@ $(document).ready(function () {
 									$("#det").blur(function () {
 										var selecval = $("#det option:selected").val();
 										$.ajax({
-											url: "http://102.16.19.48:4200/CAMI/AjaxController/getdet",
+											url: "http://192.168.88.40:8080/CAMI/AjaxController/getdet",
 											type: "POST",
 											data: { matr: selecval },
 											dataType: "json",
@@ -184,7 +184,7 @@ $(document).ready(function () {
 									$("#det").change(function () {
 										var selecval = $("#det option:selected").val();
 										$.ajax({
-											url: "http://102.16.19.48:4200/CAMI/AjaxController/getdet",
+											url: "http://192.168.88.40:8080/CAMI/AjaxController/getdet",
 											type: "POST",
 											data: { matr: selecval },
 											dataType: "json",
@@ -304,7 +304,7 @@ $(document).ready(function () {
 			var insertcompte = $(".insertcompte"),
 				compteselec = $(".comptehide").attr("value");
 			$.ajax({
-				url: "http://102.16.19.48:4200/CAMI/GetController/Categorie",
+				url: "http://192.168.88.40:8080/CAMI/GetController/Categorie",
 				type: "GET",
 				data: "compte=" + compteselec,
 				dataType: "json",
@@ -472,7 +472,7 @@ $(document).ready(function () {
 			);
 
 			$.ajax({
-				url: "http://102.16.19.48:4200/CAMI/AjaxController/materielmodifie",
+				url: "http://192.168.88.40:8080/CAMI/AjaxController/materielmodifie",
 				type: "GET",
 				data: "referencemate=" + refmat,
 				dataType: "json",
@@ -577,7 +577,7 @@ $(document).ready(function () {
 			);
 
 			$.ajax({
-				url: "http://102.16.19.48:4200/CAMI/AjaxController/materielmodifie",
+				url: "http://192.168.88.40:8080/CAMI/AjaxController/materielmodifie",
 				type: "GET",
 				data: "referencemate=" + refmats,
 				dataType: "json",
@@ -780,7 +780,7 @@ $(document).ready(function () {
 				});
 
 				$.ajax({
-					url: "http://102.16.19.48:4200/CAMI/AjaxController/getdivision",
+					url: "http://192.168.88.40:8080/CAMI/AjaxController/getdivision",
 					type: "GET",
 					data: "matricule=" + matricule,
 					dataType: "json",
@@ -872,7 +872,7 @@ $(document).ready(function () {
 					});
 
 					$.ajax({
-						url: "http://102.16.19.48:4200/CAMI/AjaxController/getdivision",
+						url: "http://192.168.88.40:8080/CAMI/AjaxController/getdivision",
 						type: "GET",
 						data: "matricule=" + agmatr,
 						dataType: "json",
@@ -1003,7 +1003,7 @@ $(document).ready(function () {
 			);
 
 			$.ajax({
-				url: "http://102.16.19.48:4200/CAMI/AjaxController/sortaseho",
+				url: "http://192.168.88.40:8080/CAMI/AjaxController/sortaseho",
 				type: "GET",
 				data: "refmat=" + matrefinfo,
 				dataType: "json",
@@ -1085,7 +1085,7 @@ $(document).ready(function () {
 		}).then((Delete) => {
 			if (Delete) {
 				window.location.href =
-					"http://102.16.19.48:4200/CAMI/HomeController/disconnect";
+					"http://192.168.88.40:8080/CAMI/HomeController/disconnect";
 			} else {
 				swal.close();
 			}

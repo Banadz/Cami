@@ -4,13 +4,13 @@ $(document).ready(function () {
 	});
 	$("#idavatarprof").attr(
 		"src",
-		"http://102.16.19.48:4200/CAMI/bootstrap/images/profil/user.png"
+		"http://192.168.88.40:8080/CAMI/bootstrap/images/profil/user.png"
 	);
 	$("#idavatarprof").attr("width", "100");
 	ima = $("#hideIdprof").attr("value");
 	$("#hideIdprof").hide();
 	$.ajax({
-		url: "http://102.16.19.48:4200/CAMI/User/getUser",
+		url: "http://192.168.88.40:8080/CAMI/User/getUser",
 		type: "GET",
 		data: "im=" + ima,
 		dataType: "json",
@@ -24,7 +24,7 @@ $(document).ready(function () {
 				if (reponse.user[0]["PHOTO"]) {
 					$("#idavatarprof").attr(
 						"src",
-						"http://102.16.19.48:4200/CAMI/bootstrap/images/profil/" +
+						"http://192.168.88.40:8080/CAMI/bootstrap/images/profil/" +
 							reponse.user[0]["PHOTO"]
 					);
 					$("#idavatarprof").attr("width", "150");
@@ -108,7 +108,7 @@ $(document).ready(function () {
 			}).then((Delete) => {
 				if (Delete) {
 					$.ajax({
-						url: "http://102.16.19.48:4200/CAMI/User/changePass",
+						url: "http://192.168.88.40:8080/CAMI/User/changePass",
 						type: "GET",
 						data: "newpass=" + newpass + "&&ima=" + ima,
 						dataType: "json",
@@ -123,7 +123,7 @@ $(document).ready(function () {
 									}
 								);
 								window.location.href =
-									"http://102.16.19.48:4200/CAMI/HomeController/disconnect";
+									"http://192.168.88.40:8080/CAMI/HomeController/disconnect";
 							} else {
 								swal("Erreur", "Une erreur, lors du transfert de donnés", {
 									icon: "error",
@@ -174,7 +174,7 @@ $(document).ready(function () {
 			}).then((Delete) => {
 				if (Delete) {
 					$.ajax({
-						url: "http://102.16.19.48:4200/CAMI/User/changePass",
+						url: "http://192.168.88.40:8080/CAMI/User/changePass",
 						type: "GET",
 						data: "newpass=" + newpass + "&&ima=" + ima,
 						dataType: "json",
@@ -189,7 +189,7 @@ $(document).ready(function () {
 									}
 								);
 								window.location.href =
-									"http://102.16.19.48:4200/CAMI/HomeController/disconnect";
+									"http://192.168.88.40:8080/CAMI/HomeController/disconnect";
 							} else {
 								swal("Erreur", "Une erreur, lors du transfert de donnés", {
 									icon: "error",
@@ -239,7 +239,7 @@ $(document).ready(function () {
 				ima = $("#hideIdprof").attr("value");
 				oldpass = $("#oldpass").val();
 				$.ajax({
-					url: "http://102.16.19.48:4200/CAMI/User/passControl",
+					url: "http://192.168.88.40:8080/CAMI/User/passControl",
 					type: "GET",
 					data: "oldpass=" + oldpass + "&&ima=" + ima,
 					dataType: "json",
@@ -335,7 +335,7 @@ $(document).ready(function () {
 
 	let agentLogged = "";
 	$.ajax({
-		url: "http://102.16.19.48:4200/CAMI/HomeController/salutation",
+		url: "http://192.168.88.40:8080/CAMI/HomeController/salutation",
 		dataType: "json",
 		success: function (reponse, status) {
 			if (reponse.success) {
@@ -377,7 +377,7 @@ $(document).ready(function () {
 						ima = $("#hideIdprof").attr("value");
 						oldpass = $("#oldpass").val();
 						$.ajax({
-							url: "http://102.16.19.48:4200/CAMI/User/passControl",
+							url: "http://192.168.88.40:8080/CAMI/User/passControl",
 							type: "GET",
 							data: "oldpass=" + oldpass + "&&ima=" + ima,
 							dataType: "json",

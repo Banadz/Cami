@@ -31,7 +31,7 @@ $(document).ready(function () {
 			tableCategorie.rows().remove().draw();
 			compte = $(".areaCompte").attr("id");
 			$.ajax({
-				url: "http://102.16.19.48:4200/CAMI/ArticleController/seachCategorie",
+				url: "http://192.168.88.40:8080/CAMI/ArticleController/seachCategorie",
 				type: "GET",
 				data: "compte=" + compte,
 				dataType: "json",

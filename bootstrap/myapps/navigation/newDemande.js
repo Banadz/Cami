@@ -37,7 +37,7 @@ $(document).ready(function () {
 		$(this).on("click", function () {
 			let categorie = $(".zoneCategorie").attr("id");
 			$.ajax({
-				url: "http://102.16.19.48:4200/CAMI/article/getDesignation",
+				url: "http://192.168.88.40:8080/CAMI/article/getDesignation",
 				type: "GET",
 				data: "compte=" + categorie.trim(),
 				dataType: "json",
@@ -192,7 +192,7 @@ $(document).ready(function () {
 				}
 			} else {
 				$.ajax({
-					url: "http://102.16.19.48:4200/CAMI/QteDemande/control",
+					url: "http://192.168.88.40:8080/CAMI/QteDemande/control",
 					method: "POST",
 					data: { formule: formu, qDem: quantit },
 					dataType: "json",
@@ -306,7 +306,7 @@ $(document).ready(function () {
 			formu = laligne[0];
 			quantit = $("#up_DemQuant").val();
 			$.ajax({
-				url: "http://102.16.19.48:4200/CAMI/QteDemande/control",
+				url: "http://192.168.88.40:8080/CAMI/QteDemande/control",
 				method: "POST",
 				data: { formule: formu, qDem: quantit },
 				dataType: "json",
@@ -377,7 +377,7 @@ $(document).ready(function () {
 		//console.log(big_data)
 
 		$.ajax({
-			url: "http://102.16.19.48:4200/CAMI/demande/insertion",
+			url: "http://192.168.88.40:8080/CAMI/demande/insertion",
 			method: "POST",
 			data: { big_data: big_data },
 			dataType: "json",

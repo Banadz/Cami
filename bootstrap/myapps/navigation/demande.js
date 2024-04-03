@@ -102,7 +102,7 @@ $(document).ready(function () {
 				num = $(this).closest("tr").attr("id");
 
 				$.ajax({
-					url: "http://102.16.19.48:4200/CAMI/DemandeController/Recevoir",
+					url: "http://192.168.88.40:8080/CAMI/DemandeController/Recevoir",
 					type: "GET",
 					data: "num=" + num.trim(),
 					dataType: "json",
@@ -195,7 +195,7 @@ $(document).ready(function () {
 			}).then((Delete) => {
 				if (Delete) {
 					$.ajax({
-						url: "http://102.16.19.48:4200/CAMI/DemandeController/validation",
+						url: "http://192.168.88.40:8080/CAMI/DemandeController/validation",
 						type: "GET",
 						data: "num=" + num.trim() + "&&qte=" + qte.trim(),
 						dataType: "json",
@@ -230,7 +230,7 @@ $(document).ready(function () {
 										if (Delete) {
 											// alert("ato");
 											$.ajax({
-												url: "http://102.16.19.48:4200/CAMI/DemandeController/acceptWarning",
+												url: "http://192.168.88.40:8080/CAMI/DemandeController/acceptWarning",
 												type: "GET",
 												data:
 													"num=" +
@@ -254,7 +254,7 @@ $(document).ready(function () {
 														}).then((Delete) => {
 															if (Delete) {
 																window.location.href =
-																	"http://102.16.19.48:4200/CAMI/demande";
+																	"http://192.168.88.40:8080/CAMI/demande";
 															}
 														});
 													}
@@ -316,7 +316,7 @@ $(document).ready(function () {
 			}).then((Delete) => {
 				if (Delete) {
 					$.ajax({
-						url: "http://102.16.19.48:4200/CAMI/DemandeController/refuse",
+						url: "http://192.168.88.40:8080/CAMI/DemandeController/refuse",
 						type: "GET",
 						data: "num=" + id.trim(),
 						dataType: "json",

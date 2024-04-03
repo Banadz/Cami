@@ -1,7 +1,7 @@
 $(document).ready(function () {
 	let agent = "";
 	$.ajax({
-		url: "http://102.16.19.48:4200/CAMI/HomeController/salutation",
+		url: "http://192.168.88.40:8080/CAMI/HomeController/salutation",
 		dataType: "json",
 		success: function (reponse, status) {
 			if (reponse.success) {
@@ -24,11 +24,11 @@ $(document).ready(function () {
 						!$(e.target).closest(".modal-content").length &&
 						mymodal.is(":visible")
 					) {
-						window.location.href = "http://102.16.19.48:4200/CAMI/user/profil";
+						window.location.href = "http://192.168.88.40:8080/CAMI/user/profil";
 					}
 				});
 				$("#oui").on("click", function () {
-					window.location.href = "http://102.16.19.48:4200/CAMI/user/profil";
+					window.location.href = "http://192.168.88.40:8080/CAMI/user/profil";
 				});
 
 				function magimagie() {
