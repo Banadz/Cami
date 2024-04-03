@@ -23,7 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://192.168.88.40/CAMI/';
+$config['base_url'] = 'http://102.16.19.48:4200/CAMI/';
+//http://192.168.88.40/CAMI/
 
 /*
 |--------------------------------------------------------------------------

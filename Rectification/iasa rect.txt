@@ -1,0 +1,25 @@
+pensionne: billeteur, nom et prenoms, tsis ministere, CIN ++
+activite:nom et prenoms, ministere, imputation, (uadm), CIN,+++
+
+a dispatcher++
+
+
+pension = retraite ++
+visa , solde = en activite +++
+
+solde et pension tsis cellule d'appui+++
+soloina nature le objet ++++++
+cin unique ++++
+
+email dossier dispatcher soloina nb dosier encours
+
+Dossiers en cours de traitement-Comptable(recherche++++ front , export pdf+++)
+
+
+esorina heure d'ete, de atao gmt+3 moscou saint petersbourg
+
+lasa afaka mampiditra str affaire general raha ovaina corresp n type de avy eo averina solde et pension +++++
+diso encours sy instance am rapport cumule
+
+
+pagination liste bordereau tsy mandeha

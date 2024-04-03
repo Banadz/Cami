@@ -1,0 +1,99 @@
+1	Agrafe	6111
+2	Agrafeuse 	6111
+3	Attache lettre 	6111
+4	Bande 	6111
+5	Blanco 	6111
+6	Bloc note 	6111
+7	Boite à archive	6111
+8	Cahier 	6111
+9	Chemise cartonnée 	6111
+10	Sous-chemise	6111
+11	Ciseaux de bureau	6111
+12	Classeur 	6111
+13	Colle 	6111
+14	Crayon de bois	6111
+15	Cutter 	6111
+16	Emballage	6111
+17	Encre à tampon 	6111
+18	Enveloppe 	6111
+19	Ficelle de bureau 	6111
+20	Gomme	6111
+21	Machine à calculer	6111
+22	Marqueur permanent 	6111
+23	Surligneur	6111
+24	Carbone à mains	6111
+25	Parapheur 	6111
+26	Perforateur 	6111
+27	Post-it 	6111
+28	Papier 	6111
+29	Scotch	6111
+30	Sous-main	6111
+31	Stylo 	6111
+32	Timbre date	6111
+33	Porte bloc cube métallique noir	6111
+34	Règle graduée	6111
+35	Ote agraphe	6111
+36	Recharge bloc mémo	6111
+37	Punaise	6111
+38	Porte badge	6111
+39	Plaque carton simple onde	6111
+40	Tampon encreur 	6111
+41	Pochettes de plastification	6111
+42	DVD-R	6113
+43	Flash disk	6113
+44	Cartouche de toner	6113
+45	Cartouche d'encre 	6113
+46	Encre de recharge 	6113
+47	Poudre de recharge	6113
+48	Alcool 90 °	6114
+49	Balai 	6114
+50	Bombe	6114
+51	Brosse 	6114
+52	Eponge	6114
+53	Gant 	6114
+54	Lave vitre 	6114
+55	Pelle à ordure 	6114
+56	Savon 	6114
+57	Seau	6114
+58	Tapis 	6114
+59	Désinfectant 	6114
+60	Désodorisant	6114
+61	Liquide 	6114
+62	Lave main	6114
+63	Sac en jute 200 kg	6114
+64	détartrant 	6114
+65	Chiffon 	6114
+66	Entonnoir PM	6114
+67	Séringue MM	6114
+68	Blouse 	6114
+69	Chapeau 	6114
+70	Masque chirurgical 	6114
+71	peinture	6211
+72	rideau	6211
+73	Serpillère	6114
+74	Déboucheur	6114
+75	Eau de javel	6114
+76	Table	1111
+77	Chaise	1111
+78	Etagère	6164
+79	Table	6164
+80	Chaise	6164
+81	Ordinateur	2163
+82	Onduleur	2163
+83	Imprimante	2163
+84	Armoire	6164
+85	Bac à courrier	6111
+86	Bloc cube	6111
+87	Porte cachet	6111
+88	Taille crayon	6111
+89	Reliure	6111
+90	Ruban machine à écrire	6111
+91	Chemise à sangle	6111
+92	Mouilleur de caisse	6111
+93	Véhicule	2172
+94	Video projecteur	2163
+95	Imprimés et documents administratifs	6112
+96	Caisse d'Archive	6111
+97	Caisse d'Archive	6111
+98	Caisse d'Archive	6111
+99	Caisse d'Archive	6111

@@ -700,7 +700,7 @@
                                                                         <?php echo $artis['CODE_SER'];   ?> -
                                                                         <?php echo $artis['LABEL_DIVISION'];   ?></td>
                                                                     <td class="cifici">
-                                                                        <?php  echo $artis['QUANTITE'];   ?></td>
+                                                                        <?php  echo $artis['QUANTITE_ACC'];   ?></td>
                                                                     <td><?php    echo $artis['UNITE'];   ?></td>
                                                                 </tr>
 
