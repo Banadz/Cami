@@ -140,7 +140,8 @@
         <div>
             <div class="row header">
                 <div class="logo">
-                    <img src="http://localhost/CAMI/bootstrap/images/RPIM_logo.jpg" style="width:160px;" alt=""
+                    <!-- //http://192.168.88.40:8080/CAMI/bootstrap/images/RPIM_logo.jpg -->
+                    <img src="<?php echo base_url('/bootstrap/images/RPIM_logo.jpg');?>" style="width:160px;" alt=""
                         srcset="">
                 </div>
                 <div class="Entete" style="margin-left:40px;">

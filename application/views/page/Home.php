@@ -52,7 +52,7 @@
                         </p>
                     </div>
                     <div class="modal-footer no-bd" id="pied">
-                        <a href="http://192.168.88.40/CAMI/user/profil">
+                        <a href="http://192.168.88.40:8080/CAMI/user/profil">
                             <button type="button" id="oui" class="btn btn-warning">Oui</button>
                         </a>
                     </div>

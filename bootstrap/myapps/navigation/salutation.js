@@ -24,6 +24,7 @@ $(document).ready(function () {
 						!$(e.target).closest(".modal-content").length &&
 						mymodal.is(":visible")
 					) {
+						// http://192.168.88.40:8080/CAMI/user/profil
 						window.location.href = "http://192.168.88.40:8080/CAMI/user/profil";
 					}
 				});

@@ -266,9 +266,10 @@
         <?php if  ($_SESSION['agent']['PASSWORD'] == '0000' || $_SESSION['agent']['PASSWORD'] == 'default' )	{?>
         <script>
         $(document).ready(function() {
-            if (window.location.href !== 'http://192.168.88.40/CAMI/user/profil' && window.location.href !==
-                'http://192.168.88.40/CAMI/Home') {
-                window.location.href = 'http://192.168.88.40/CAMI/user/profil'
+            if (window.location.href !== 'http://192.168.88.40:8080/CAMI/user/profil' && window.location
+                .href !==
+                'http://192.168.88.40:8080/CAMI/Home') {
+                window.location.href = 'http://192.168.88.40:8080/CAMI/user/profil'
             }
         })
         </script>

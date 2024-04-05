@@ -401,7 +401,7 @@ $(document).ready(function () {
 								"big_data=" + encodeURIComponent(JSON.stringify(big_data));
 							// // console.log(queryString)
 							window.location.href =
-								"DemandeController/printDemande?" +
+								"http://192.168.88.40:8080/CAMI/DemandeController/printDemande?" +
 								// queryString +
 								// "&&" +
 								listNumSTring;

@@ -1311,8 +1311,19 @@ if (!defined('__CLASS_HTML2PDF__')) {
             // get the size of the image
             // WARNING : if URL, "allow_url_fopen" must turned to "on" in php.ini
             $infos=@getimagesize($src);
-
+            // Debugging: Afficher le type de $infos
+            // var_dump($src);
+            
             // if the image does not exist, or can not be loaded
+            if (!is_array($infos)) {
+                // Handle the case where $infos is not an array (e.g., it's a boolean)
+                // You may need to adjust this logic based on your requirements
+                if ($this->_testIsImage) {
+                    throw new HTML2PDF_exception(6, $src);
+                }
+                $src = null;
+                $infos = array(16, 16);
+            }
             if (count($infos)<2) {
                 // if the test is activ => exception
                 if ($this->_testIsImage) {
